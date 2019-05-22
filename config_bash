@@ -1,0 +1,57 @@
+#!/bin/bash
+#
+# Set instance type
+INSTANCE="ami"
+#INSTANCE="ubuntu"
+#
+#
+echo " -------------------------------------------------------------------"
+echo " ----------                Instance Type                      ------"
+echo " -------------------------------------------------------------------"
+echo $INSTANCE
+echo " -------------------------------------------------------------------"
+echo " -------------------------------------------------------------------"
+if [ "$INSTANCE" == "ami" ]; then
+	UNAMEX="ec2-user"
+	sudo yum update -y
+	sudo yum install -y git
+elif [ "$INSTANCE" == "ubuntu" ]; then
+	UNAMEX="ubuntu"
+else
+	echo "Instance Type does not exist in config_bash script - please update it."
+fi
+echo " -------------------------------------------------------------------"
+echo " ----------                   User Name                       ------"
+echo " -------------------------------------------------------------------"
+echo $UNAMEX
+echo " -------------------------------------------------------------------"
+echo " -------------------------------------------------------------------"
+wget https://repo.continuum.io/archive/Anaconda2-4.1.1-Linux-x86_64.sh -O ~/anaconda.sh
+bash ~/anaconda.sh -b -p /home/$UNAMEX/anaconda
+echo "export PATH=$PATH:/home/$UNAMEX/anaconda/bin" >> /home/$UNAMEX/.bash_profile
+echo "alias l='ls -ltr' " >> /home/$UNAMEX/.bash_profile
+source /home/$UNAMEX/.bash_profile
+conda install -y -c conda-forge -c dlr-sc -c pythonocc -c oce pythonocc-core==0.17 python=2.7
+echo " -------------------------------------------------------------------"
+echo " ----------      Finished Installing Anaconda and OCC         ------"
+echo " -------------------------------------------------------------------"
+cd /home/$UNAMEX
+git clone https://github.com/mathLab/PyGeM
+cd /home/$UNAMEX/PyGeM
+source /home/$UNAMEX/.bashrc
+python2 setup.py install
+/home/$UNAMEX/anaconda/bin/pip install --upgrade pip
+/home/$UNAMEX/anaconda/bin/pip install runipy
+cd /home/$UNAMEX/
+echo " -------------------------------------------------------------------"
+echo " ----------         Finished Installing PyGem                 ------"
+echo " -------------------------------------------------------------------"
+git clone https://github.com/PSUCompBio/rbf-brain
+cp /home/$UNAMEX/rbf-brain/RBFfinal.ipynb /home/$UNAMEX/PyGeM/tutorials/
+cp /home/$UNAMEX/rbf-brain/initialmesh.vtk /home/$UNAMEX/PyGeM/tests/test_datasets/
+cp /home/$UNAMEX/rbf-brain/parameters_rbf_custom.prm /home/$UNAMEX/PyGeM/tests/test_datasets/
+echo " -------------------------------------------------------------------"
+echo " ----------               Complete RBF Setup                  ------"
+echo " -------------------------------------------------------------------"
+sudo chown -R $UNAMEX anaconda PyGeM rbf-brain
+sudo chown -R $UNAMEX .bash_profile
