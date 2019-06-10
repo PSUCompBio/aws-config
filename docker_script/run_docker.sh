@@ -18,4 +18,4 @@ sudo service docker start
 
 sudo docker pull vradars/brain_radar:1.0
 
-sudo docker run -p 80:3000 vradars/brain_radar:1.0 
+sudo docker run -it -p 80:3000 vradars/brain_radar:1.0 
