@@ -6,3 +6,14 @@ Make a ubuntu instance on AWS (Ubuntu Server 19.04 LTS, 64 bit, General Purpose,
 
 
 In Step 3: Configure Instance Details, under the Advanced Details option select User data -> "As file" -> Select "create_docker_image.sh" from your local machine.  This file is uploaded and run as part of the instance's initiation procedure and will run the dockerfile and create the docker image. 
+
+## once docker image is created, commit and push to dockerhub
+ sudo docker ps -a
+ 
+ sudo docker login -u rhk12
+ 
+ sudo docker tag DOCKER_IMAGE_NAME rhk12/nsfcareer:0.0
+ 
+ sudo docker commit DOCKER_CONTAINER_ID
+ 
+ sudo docker push rhk12/nsfcareer:0.0
