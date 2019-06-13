@@ -56,7 +56,7 @@ echo "alias python='python3' " >> /home/$UNAMEX/.bash_profile
 source /home/$UNAMEX/.bash_profile
 sleep 5
 /usr/bin/ncpus
-NCPUS_VAR = $(ncpus)
+NCPUS_VAR=$(ncpus)
 echo "ncpus = $NCPUS_VAR"
 echo " -------------------------------------------------------------------"
 echo " ----------       Finished Installing Essential Dev Tools     ------"
