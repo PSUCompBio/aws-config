@@ -10,10 +10,10 @@ In Step 3: Configure Instance Details, under the Advanced Details option select 
 ## once docker image is created, commit and push to dockerhub
  sudo docker ps -a
  
- sudo docker login -u rhk12
+ sudo docker login -u USERNAME_ON_DOCKERHUB
  
- sudo docker tag DOCKER_IMAGE_NAME rhk12/nsfcareer:0.0
+ sudo docker tag DOCKER_IMAGE_NAME USERNAME_ON_DOCKERHUB/nsfcareer:0.0
  
  sudo docker commit DOCKER_CONTAINER_ID
  
- sudo docker push rhk12/nsfcareer:0.0
+ sudo docker push USERNAME_ON_DOCKERHUB/nsfcareer:0.0
