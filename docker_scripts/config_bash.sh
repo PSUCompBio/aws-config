@@ -308,23 +308,9 @@ echo "-----------------------------------"
 
 
 cd /home/$UNAMEX
-npx create-react-app $WEBSITENAME
-cd /home/$UNAMEX/$WEBSITENAME
-npm run build
-echo " -------------------------------------------------------------------"
-echo " ----------           Complete Creating React Website         ------"
-echo " -------------------------------------------------------------------"
-echo "---------------------------------"
-date
-echo "-----------------------------------"
-
-
-
-cd /home/$UNAMEX
 chown -R $UNAMEX *
 echo " -------------------------------------------------------------------"
 echo " ----------            Complete Assigning Permissions         ------"
 echo " -------------------------------------------------------------------"
 echo "Initiation script complete! See /var/log/cloud-init-output.log for install log." >> InstallComplete
 chown -R $UNAMEX InstallComplete
-                                                    

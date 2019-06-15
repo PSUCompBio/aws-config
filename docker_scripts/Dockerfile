@@ -15,13 +15,11 @@ RUN apt-get install -y build-essential
 RUN apt-get install -y git apt-utils
 
 
-#RUN npm i -g npx
-
-
 # Setup home environment
 RUN useradd ubuntu
 
 COPY config_bash.sh .
+COPY TestingProcedures .
 #RUN ls /home/ubuntu
 #RUN usermod -aG docker ubuntu
 RUN mkdir /home/ubuntu && chown -R ubuntu: /home/ubuntu
@@ -57,6 +55,5 @@ RUN chmod +x /config_bash.sh
 
 RUN ls -la /config_bash.sh
 RUN /bin/bash -c "/config_bash.sh"
-RUN cd web && npm start
-USER ubuntu
 
+USER ubuntu
