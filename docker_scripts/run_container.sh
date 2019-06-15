@@ -5,7 +5,8 @@ echo $USER
 if [ $(which docker 2>/dev/null) ]; then
   echo "docker present"
 else
-  apt-get install docker.io
+	sudo apt-get update -y
+  sudo apt-get install docker.io -y 
 fi
 
 sudo usermod -a -G docker $USER
