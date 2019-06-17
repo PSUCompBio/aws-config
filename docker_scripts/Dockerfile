@@ -1,7 +1,6 @@
-FROM ubuntu
+FROM ${UNAMEX}
 
-ENV UNAMEX=dev
-ENV WEBSITENAME=web
+ARG UNAMEX=${UNAMEX}
 
 RUN apt-get update -y
 RUN apt-get install -y git
@@ -14,46 +13,19 @@ RUN apt-get install -y build-essential
 
 RUN apt-get install -y git apt-utils
 
-
 # Setup home environment
-RUN useradd ubuntu
+RUN useradd ${UNAMEX}
 
-COPY config_bash.sh .
-COPY TestingProcedures .
-#RUN ls /home/ubuntu
-#RUN usermod -aG docker ubuntu
-RUN mkdir /home/ubuntu && chown -R ubuntu: /home/ubuntu
-RUN mkdir -p /home/ubuntu/bin /home/ubuntu/lib /home/ubuntu/include
-ENV PATH /home/ubuntu/bin:$PATH
-ENV PKG_CONFIG_PATH /home/ubuntu/lib/pkgconfig
-ENV LD_LIBRARY_PATH /home/ubuntu/lib
+RUN mkdir /home/${UNAMEX} && chown -R ${UNAMEX}: /home/${UNAMEX}
 
-# Create a shared data volume
-# We need to create an empty file, otherwise the volume will
-# belong to root.
-# This is probably a Docker bug.
-RUN mkdir /var/shared/
-RUN touch /var/shared/placeholder
-RUN chown -R ubuntu:ubuntu /var/shared
-VOLUME /var/shared
+WORKDIR /home/${UNAMEX}
+ENV HOME /home/${UNAMEX}
+RUN touch /home/${UNAMEX}/.bash_profile
+RUN chown -R ${UNAMEX}: /home/${UNAMEX}
 
-WORKDIR /home/ubuntu
-ENV HOME /home/ubuntu
-#ADD vimrc /home/ubuntu/.vimrc
-#ADD vim /home/ubuntu/.vim
-RUN touch /home/ubuntu/.bash_profile
-RUN touch /home/ubuntu/.gitconfig
-
-# Link in shared parts of the home directory
-RUN ln -s /var/shared/.ssh
-RUN ln -s /var/shared/.bash_history
-RUN ln -s /var/shared/.maintainercfg
-
-RUN chown -R ubuntu: /home/ubuntu
-
-RUN chmod +x /config_bash.sh
-
-RUN ls -la /config_bash.sh
-RUN /bin/bash -c "/config_bash.sh"
-
-USER ubuntu
+RUN cd /home/${UNAMEX}
+RUN pwd
+COPY config_bash.sh /home/${UNAMEX}
+COPY TestingProcedures /home/${UNAMEX}
+RUN ls -ltr
+RUN /bin/bash config_bash.sh
