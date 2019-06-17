@@ -1,26 +1,27 @@
+FROM ubuntu
 ARG UNAMEX=ubuntu
-FROM ${UNAMEX}
+RUN echo "'UNAMEX=${UNAMEX}'"
 
-RUN apt-get update -y
-RUN apt-get install -y git
-RUN apt-get install -y python
-RUN apt-get install -y curl
-RUN apt-get install -y vim
-RUN apt-get install -y pkg-config
-RUN apt-get install -y cmake
-RUN apt-get install -y build-essential
+#RUN apt-get update -y
+#RUN apt-get install -y git
+#RUN apt-get install -y python
+#RUN apt-get install -y curl
+#RUN apt-get install -y vim
+#RUN apt-get install -y pkg-config
+#RUN apt-get install -y cmake
+#RUN apt-get install -y build-essential
 
-RUN apt-get install -y git apt-utils
+#RUN apt-get install -y git apt-utils
 
 # Setup home environment
-RUN useradd ${UNAMEX}
+#RUN useradd ${UNAMEX}
 
-RUN mkdir /home/${UNAMEX} && chown -R ${UNAMEX}: /home/${UNAMEX}
+#RUN mkdir /home/${UNAMEX} && chown -R ${UNAMEX}: /home/${UNAMEX}
 
 WORKDIR /home/${UNAMEX}
 ENV HOME /home/${UNAMEX}
 RUN touch /home/${UNAMEX}/.bash_profile
-RUN chown -R ${UNAMEX}: /home/${UNAMEX}
+#RUN chown -R ${UNAMEX}: /home/${UNAMEX}
 
 RUN cd /home/${UNAMEX}
 RUN pwd
