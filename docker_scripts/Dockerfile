@@ -1,6 +1,5 @@
-FROM ${UNAMEX}
-
 ARG UNAMEX=ubuntu
+FROM ${UNAMEX}
 
 RUN apt-get update -y
 RUN apt-get install -y git
