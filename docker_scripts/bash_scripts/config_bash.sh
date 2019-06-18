@@ -38,7 +38,8 @@ if [ "$INSTANCE" == "ami" ]; then
         sudo yum install -y mesa-libGL
         sudo yum install -y mesa-libGL-devel
         sudo yum install -y mesa-libGLES
-  sudo yum install -y mesa-libGLES-devel
+  sudo yum install
+-y mesa-libGLES-devel
   sudo yum install -y xorg-x11-server-Xvfb
   sudo yum groupinstall -y  "Development Tools"
 elif [ "$INSTANCE" == "ubuntu" ]; then
