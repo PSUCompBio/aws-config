@@ -4,6 +4,13 @@ RUN echo "'UNAMEX=${UNAMEX}'"
 
 RUN apt-get update -y
 RUN apt-get install -y git
+RUN apt-get install -y python
+RUN apt-get install -y curl
+RUN apt-get install -y vim
+RUN apt-get install -y pkg-config
+RUN apt-get install -y cmake
+RUN apt-get install -y build-essential
+RUN apt-get install -y git apt-utils
 
 # Setup home environment
 RUN useradd ${UNAMEX}
@@ -25,3 +32,4 @@ COPY TestingProcedures.md /home/${UNAMEX}
 RUN ls -ltr
 #RUN /bin/bash config_bash.sh
 RUN /bin/bash bash_scripts/inital-setup.sh
+RUN /bin/bash bash_scripts/install-swig.sh

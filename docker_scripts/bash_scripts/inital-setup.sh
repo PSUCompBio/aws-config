@@ -42,11 +42,11 @@ if [ "$INSTANCE" == "ami" ]; then
   sudo yum install -y xorg-x11-server-Xvfb
   sudo yum groupinstall -y  "Development Tools"
 elif [ "$INSTANCE" == "ubuntu" ]; then
-        sudo apt-get update -y
-        sudo apt-get install -y libgl1 libxt6 build-essential cmake-curses-gui xvfb nodejs npm freeglut3-dev libblas-dev liblapack-dev openmpi-bin openmpi-common libopenmpi-dev python3-pip autotools-dev automake libpcre3-dev bison byacc libfreetype6-dev pkg-config libfontconfig1-dev mdm
-        sudo apt-get install -y libxt6
-        sudo npm i -g npx
-        sudo pip3 install numpy matplotlib
+        apt-get update -y
+        apt-get install -y libgl1 libxt6 build-essential cmake-curses-gui xvfb nodejs npm freeglut3-dev libblas-dev liblapack-dev openmpi-bin openmpi-common libopenmpi-dev python3-pip autotools-dev automake libpcre3-dev bison byacc libfreetype6-dev pkg-config libfontconfig1-dev mdm
+        apt-get install -y libxt6
+        npm i -g npx
+        pip3 install numpy matplotlib
 else
         echo "Instance Type does not exist in config_bash script - please update it."
 fi
