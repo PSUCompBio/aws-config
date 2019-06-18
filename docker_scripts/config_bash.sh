@@ -216,7 +216,7 @@ cd /home/$UNAMEX/PyGeM
 python3 setup.py install
 #/home/$UNAMEX/$CONDAVAR/bin/pip install --upgrade pip
 #/home/$UNAMEX/$CONDAVAR/bin/pip install runipy
-pip3 install runipy
+#pip3 install runipy
 cd /home/$UNAMEX
 echo " -------------------------------------------------------------------"
 echo " ----------         Finished Installing PyGem                 ------"
@@ -259,7 +259,7 @@ cd $VTK_ROOT
 mkdir build
 cd build
 cmake ../ -DBUILD_SHARED_LIBS=ON -DCMAKE_BUILD_TYPE=Release
-make -j8:
+make -j8
 cd /home/$UNAMEX
 echo "export LD_LIBRARY_PATH=$VTK_ROOT/build/bin:$VTK_ROOT/build/lib:$LD_LIBRARY_PATH" >> /home/$UNAMEX/.bash_profile
 source /home/$UNAMEX/.bash_profile
