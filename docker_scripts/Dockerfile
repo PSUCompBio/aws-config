@@ -20,7 +20,7 @@ RUN chown -R ${UNAMEX} /home/${UNAMEX}
 
 RUN cd /home/${UNAMEX}
 RUN pwd
-COPY bash_scripts /home/${UNAMEX}
+COPY bash_scripts /home/${UNAMEX}/bash_scripts
 COPY TestingProcedures.md /home/${UNAMEX}
 RUN ls -ltr
 #RUN /bin/bash config_bash.sh
