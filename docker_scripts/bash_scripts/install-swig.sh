@@ -4,7 +4,7 @@ cd swig
 ./autogen.sh
 ./configure
 make -j8
-sudo make install
+make install
 echo " -------------------------------------------------------------------"
 echo " ----------              Finished Installing Swig             ------"
 echo " -------------------------------------------------------------------"

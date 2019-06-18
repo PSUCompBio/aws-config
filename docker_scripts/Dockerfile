@@ -33,3 +33,4 @@ RUN ls -ltr
 #RUN /bin/bash config_bash.sh
 RUN /bin/bash bash_scripts/inital-setup.sh
 RUN /bin/bash bash_scripts/install-swig.sh
+RUN /bin/bash bash_scripts/install-oce.sh
