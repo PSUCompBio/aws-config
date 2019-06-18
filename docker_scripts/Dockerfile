@@ -37,5 +37,5 @@ RUN /bin/bash bash_scripts/inital-setup.sh
 
 # clean up and setup
 COPY bash_scripts/bashrc /home/${UNAMEX}/.bashrc
-RUN source .bashrc
+RUN /bin/bash -c "source .bashrc"
 RUN chown -R ${UNAMEX} /home/${UNAMEX}
