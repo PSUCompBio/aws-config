@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:18.04
 ARG UNAMEX=ubuntu
 RUN echo "'UNAMEX=${UNAMEX}'"
 
@@ -32,8 +32,10 @@ COPY TestingProcedures.md /home/${UNAMEX}
 RUN ls -ltr
 #RUN /bin/bash config_bash.sh
 RUN /bin/bash bash_scripts/inital-setup.sh
-#RUN /bin/bash bash_scripts/install-swig.sh
-#RUN /bin/bash bash_scripts/install-oce.sh
+RUN /bin/bash bash_scripts/install-swig.sh
+RUN /bin/bash bash_scripts/install-oce.sh
+RUN /bin/bash bash_scripts/install-occ.sh
+#RUN /bin/bash bash_scripts/install-pip-vtk.sh
 
 # clean up and setup
 COPY bash_scripts/bashrc /home/${UNAMEX}/.bashrc
