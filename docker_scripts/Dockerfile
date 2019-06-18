@@ -27,6 +27,6 @@ RUN touch /home/${UNAMEX}/.bash_profile
 RUN cd /home/${UNAMEX}
 RUN pwd
 COPY config_bash.sh /home/${UNAMEX}
-COPY TestingProcedures /home/${UNAMEX}
+COPY TestingProcedures.md /home/${UNAMEX}
 RUN ls -ltr
 RUN /bin/bash config_bash.sh
