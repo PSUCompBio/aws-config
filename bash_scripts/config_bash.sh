@@ -42,11 +42,11 @@ if [ "$INSTANCE" == "ami" ]; then
   sudo yum install -y xorg-x11-server-Xvfb
   sudo yum groupinstall -y  "Development Tools"
 elif [ "$INSTANCE" == "ubuntu" ]; then
-        apt-get update -y
-        apt-get install -y libgl1 libxt6 build-essential cmake-curses-gui xvfb nodejs npm freeglut3-dev libblas-dev liblapack-dev openmpi-bin openmpi-common libopenmpi-dev python3-pip autotools-dev automake libpcre3-dev bison byacc libfreetype6-dev pkg-config libfontconfig1-dev mdm
-        apt-get install -y libxt6
-        npm i -g npx
-        pip3 install numpy matplotlib
+        sudo apt-get update -y
+        sudo apt-get install -y libgl1 libxt6 build-essential cmake-curses-gui xvfb nodejs npm freeglut3-dev libblas-dev liblapack-dev openmpi-bin openmpi-common libopenmpi-dev python3-pip autotools-dev automake libpcre3-dev bison byacc libfreetype6-dev pkg-config libfontconfig1-dev mdm
+        sudo apt-get install -y libxt6
+        sudo npm i -g npx
+        sudo pip3 install numpy matplotlib
 else
         echo "Instance Type does not exist in config_bash script - please update it."
 fi
@@ -72,7 +72,7 @@ cd swig
 ./autogen.sh
 ./configure
 make -j8
-make install
+sudo make install
 echo " -------------------------------------------------------------------"
 echo " ----------              Finished Installing Swig             ------"
 echo " -------------------------------------------------------------------"
@@ -103,7 +103,7 @@ echo "-----------------------------------"
 cmake ..
 
 make -j8
-make install
+sudo make install
 
 echo "-------------python oce make end--------------------"
 date
@@ -163,7 +163,7 @@ date
 echo "-----------------------------------"
 
 
-make install
+sudo make install
 echo " -------------------------------------------------------------------"
 echo " ----------      Finished Installing Python OCC Core          ------"
 echo " -------------------------------------------------------------------"
@@ -195,7 +195,7 @@ if [ "$INSTANCE" == "ami" ]; then
         sudo pip3 install vtk
 elif [ "$INSTANCE" == "ubuntu" ]; then
         #conda install anaconda vtk
-        pip3 install vtk
+        sudo pip3 install vtk
 fi
 echo " -------------------------------------------------------------------"
 echo " ----------      Finished Installing VTK for python             ----"
@@ -213,7 +213,7 @@ cp /home/$UNAMEX/rbf-brain/__init__.py /home/$UNAMEX/PyGeM/pygem
 cd /home/$UNAMEX/PyGeM
 #source /home/$UNAMEX/.bashrc
 #/home/$UNAMEX/$CONDAVAR/bin/python2 setup.py install
-python3 setup.py install
+sudo python3 setup.py install
 #/home/$UNAMEX/$CONDAVAR/bin/pip install --upgrade pip
 #/home/$UNAMEX/$CONDAVAR/bin/pip install runipy
 #pip3 install runipy
@@ -241,7 +241,7 @@ echo "-----------------------------------"
 
 git clone https://github.com/PSUCompBio/vtk-image-write
 cd vtk-image-write
-xvfb-run --server-args="-screen 0 1024x768x24" python3 write-image.py
+sudo xvfb-run --server-args="-screen 0 1024x768x24" python3 write-image.py
 echo " -------------------------------------------------------------------"
 echo " ----------             Complete Image Write Test              ------"
 echo " -------------------------------------------------------------------"
