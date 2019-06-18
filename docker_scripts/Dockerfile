@@ -15,6 +15,8 @@ RUN apt-get install -y git apt-utils
 # Setup home environment
 RUN useradd ${UNAMEX}
 
+# below does not need to be done since on AWS ubuntu instances
+# ubuntu user is added by default
 #RUN mkdir /home/${UNAMEX} && chown -R ${UNAMEX}: /home/${UNAMEX}
 
 WORKDIR /home/${UNAMEX}
