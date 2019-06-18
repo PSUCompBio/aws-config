@@ -32,5 +32,10 @@ COPY TestingProcedures.md /home/${UNAMEX}
 RUN ls -ltr
 #RUN /bin/bash config_bash.sh
 RUN /bin/bash bash_scripts/inital-setup.sh
-RUN /bin/bash bash_scripts/install-swig.sh
-RUN /bin/bash bash_scripts/install-oce.sh
+#RUN /bin/bash bash_scripts/install-swig.sh
+#RUN /bin/bash bash_scripts/install-oce.sh
+
+# clean up and setup
+COPY bash_scripts/bashrc /home/${UNAMEX}/.bashrc
+RUN source .bashrc
+RUN chown -R ${UNAMEX} /home/${UNAMEX}
