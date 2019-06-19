@@ -17,10 +17,10 @@ cd /home/$UNAMEX
 if [ "$INSTANCE" == "ami" ]; then
 #       conda install anaconda vtk
 #       /home/$UNAMEX/$CONDAVAR/bin/pip install vtk
-        sudo pip3 install vtk
+        pip3 install vtk
 elif [ "$INSTANCE" == "ubuntu" ]; then
         #conda install anaconda vtk
-        sudo pip3 install vtk
+        pip3 install vtk
 fi
 echo " -------------------------------------------------------------------"
 echo " ----------      Finished Installing VTK for python             ----"
