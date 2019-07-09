@@ -1,11 +1,12 @@
 #!/bin/bash
-  
+
 echo $USER
 
 if [ $(which docker 2>/dev/null) ]; then
   echo "docker present"
 else
-  apt-get install docker.io
+	sudo apt-get update -y
+  sudo apt-get install docker.io -y 
 fi
 
 sudo usermod -a -G docker $USER
@@ -16,6 +17,6 @@ sudo docker --version
 
 sudo service docker start
 
-sudo docker pull vradars/brain_radar:1.0
+sudo docker pull rhk12/nsfcareer:latest
 
-sudo docker run -it -p 80:3000 vradars/brain_radar:1.0
+sudo docker run -it -p 80:3000 rhk12/nsfcareer:latest
