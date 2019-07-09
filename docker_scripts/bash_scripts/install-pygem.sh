@@ -1,6 +1,6 @@
 cd /home/$UNAMEX
 git clone https://github.com/PSUCompBio/rbf-brain
-git clone https://github.com/mathLab/PyGeM
+git clone https://github.com/PSUCompBio/PyGeM
 cp /home/$UNAMEX/rbf-brain/__init__.py /home/$UNAMEX/PyGeM/pygem
 cd /home/$UNAMEX/PyGeM
 #source /home/$UNAMEX/.bashrc
