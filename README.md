@@ -3,13 +3,12 @@ This repo is used to create a docker image of the nsfcareer environment. Basical
 
  ## to create docker image
 Login into AWS and make a ubuntu instance 
- - (Ubuntu Server 19.04 LTS, 64 bit, General Purpose, t2.2xlarge, storage = 25 GB).
-
-
- - In Step 3: Configure Instance Details, under the Advanced Details option select User data -> "As file" -> Select "create_docker_image.sh" from your local machine.  This file is uploaded and run as part of the instance's initiation procedure and will run the dockerfile and create the docker image.
-
-
-In Step 6: Configure security details. You need to have ports 80 and 3000 open for docker to work.
+ - Step 1 Choose an Instance: Ubuntu Server 18.04 LTS, 64 bit, General Purpose
+ - Step 2 Choose and Instance Type: t2.2xlarge (8 vCPUs, 32 GiB)
+ - Step 3 Configure Instance Details: Take defaults but under the "Advanced Details" option select User data -> "As file" -> Select "create_docker_image.sh" from your local machine.  This file is uploaded and run as part of the instance's initiation procedure and will run the Dockerfile and create the docker image.
+  - Step 4 Add Storage: Change 8 to 25 GB
+  - Step 5 Add Tags: Take defaults
+  - Step 6 Configure Security Group: Under "Assign a security group" select, "select an exisiting security group" and choose nsfcareer. If you do not see that, you need to have ports 80 and 3000 open for Docker to work.
 
 ## once docker image is created, commit and push to dockerhub
 
