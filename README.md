@@ -2,10 +2,11 @@
 This repo is used to create a docker image of the nsfcareer environment. Basically, after creating an instance we install docker on the instance and then run the dockerfile. The dockerfile calls the docker_scripts/config_bash.sh script that has all the steps to make our environment.
 
  ## to create docker image
-Login into AWS and make a ubuntu instance (Ubuntu Server 19.04 LTS, 64 bit, General Purpose, t2.2xlarge).
+Login into AWS and make a ubuntu instance 
+ - (Ubuntu Server 19.04 LTS, 64 bit, General Purpose, t2.2xlarge, storage = 25 GB).
 
 
-In Step 3: Configure Instance Details, under the Advanced Details option select User data -> "As file" -> Select "create_docker_image.sh" from your local machine.  This file is uploaded and run as part of the instance's initiation procedure and will run the dockerfile and create the docker image.
+ - In Step 3: Configure Instance Details, under the Advanced Details option select User data -> "As file" -> Select "create_docker_image.sh" from your local machine.  This file is uploaded and run as part of the instance's initiation procedure and will run the dockerfile and create the docker image.
 
 
 In Step 6: Configure security details. You need to have ports 80 and 3000 open for docker to work.
