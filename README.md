@@ -17,8 +17,14 @@ Login into AWS and make a Ubuntu instance
 ## Once docker image is created, you can test it:
 
 ### List the images created:
-sudo docker ps -a
+sudo docker ps -a OR sudo docker image ls
 
+### Run the docker image:
+sudo docker run -it  IMAGE_ID
+
+#### Once inside the image: 
+ - Run: source ~/.bash_profile
+ - You can see the TestingProcedures.md to check all the codes that were compiled.
 
 ## Commit and push to dockerhub
 
