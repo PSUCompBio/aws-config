@@ -33,9 +33,9 @@ sudo apt-get install docker.io -y
 systemctl start docker
 systemctl enable docker
 # clone specific branch
-git clone -b minor-fixes https://github.com/PSUCompBio/aws-config.git
+#git clone -b minor-fixes https://github.com/PSUCompBio/aws-config.git
 # clone master branch
-#git clone https://github.com/PSUCompBio/aws-config.git
+git clone https://github.com/PSUCompBio/aws-config.git
 cd aws-config/docker_scripts
 docker build -t nsfcareer .
 cd /home/$UNAMEX
