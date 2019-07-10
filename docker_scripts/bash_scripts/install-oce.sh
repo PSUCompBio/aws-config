@@ -1,4 +1,3 @@
-
 cd /home/$UNAMEX
 git clone https://github.com/tpaviot/oce.git
 echo "-------------OCE CLONE FINISH TIME--------------------"
@@ -29,7 +28,11 @@ echo "-----------------------------------"
 
 echo "PATH=$PATH:/usr/local/bin" >> /home/$UNAMEX/.bash_profile
 echo "export PATH" >> /home/$UNAMEX/.bash_profile
-echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib" >> /home/$UNAMEX/.bash_profile
+# note: the variable $LD_LIBRARY_PATH was not being recognized by Docker so
+# here RK removed it. Ideally we can figure out ow to use these variables and turn
+# back on. 
+#echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib" >> /home/$UNAMEX/.bash_profile
+echo "export LD_LIBRARY_PATH=/usr/local/lib" >> /home/$UNAMEX/.bash_profile
 source /home/$UNAMEX/.bash_profile
 echo " -------------------------------------------------------------------"
 echo " ----------               Finished Installing OCE             ------"
