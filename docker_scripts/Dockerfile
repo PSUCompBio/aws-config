@@ -42,7 +42,7 @@ RUN /bin/bash bash_scripts/install-python-image-write.sh
 RUN /bin/bash bash_scripts/install-vtk-src.sh
 ARG VTK_ROOT=/home/${UNAMEX}/VTK
 RUN /bin/bash bash_scripts/install-femtech.sh
-RUN /bin/bash bash_scripts/install-mergepolydata.sh
+RUN /bin/bash bash_scripts/install-projectedtexture.sh
 RUN /bin/bash bash_scripts/install-complete.sh
 
 # clean up and setup
