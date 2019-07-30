@@ -45,7 +45,9 @@ if [ "$INSTANCE" == "ami" ]; then
 elif [ "$INSTANCE" == "ubuntu" ]; then
         sudo apt-get update -y
         sudo apt-get install -y libgl1 libxt6 build-essential cmake-curses-gui xvfb nodejs npm freeglut3-dev libblas-dev liblapack-dev openmpi-bin openmpi-common libopenmpi-dev python3-pip autotools-dev automake libpcre3-dev bison byacc libfreetype6-dev pkg-config libfontconfig1-dev mdm
+        sudo apt-get install -y wget
         sudo apt-get install -y libxt6
+        sudo apt-get install -y libtk8.6
         sudo npm i -g npx
         sudo pip3 install numpy matplotlib
 else
@@ -72,7 +74,7 @@ git clone https://github.com/swig/swig.git
 cd swig
 ./autogen.sh
 ./configure
-make -j8
+make -j 8
 sudo make install
 echo " -------------------------------------------------------------------"
 echo " ----------              Finished Installing Swig             ------"

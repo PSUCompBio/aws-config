@@ -1,12 +1,14 @@
+source /home/$UNAMEX/.bash_profile
 cd /home/$UNAMEX
-git clone https://github.com/PSUCompBio/FemTech
-cd FemTech
+echo $VTK_ROOT
+git clone https://github.com/PSUCompBio/MergePolyData
+cd MergePolyData
 mkdir build
 cd build
-cmake .. -DEXAMPLES=ON -DEXAMPLE12=ON -DEXAMPLE7=ON -DEXAMPLE9=ON -DEXAMPLE5=ON
-make -j8
+cmake .. -DVTK_DIR=$VTK_ROOT/build
+make -j 8
 echo " -------------------------------------------------------------------"
-echo " ----------           Complete FemTech Install                ------"
+echo " ----------       Completed ProjectedTexture Install          ------"
 echo " -------------------------------------------------------------------"
 
 echo "---------------------------------"
