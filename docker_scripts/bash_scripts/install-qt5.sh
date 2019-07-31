@@ -8,6 +8,7 @@ cd build
 export LLVM_INSTALL_DIR=/usr/bin/llvm-config
  ../configure -developer-build -opensource -nomake examples -nomake tests -skip qtwebengine -confirm-license
  make -j 8
+ make install
  echo " -------------------------------------------------------------------"
  echo " ----------       Completed qt5 Install          ------"
  echo " -------------------------------------------------------------------"
