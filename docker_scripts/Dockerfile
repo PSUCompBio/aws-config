@@ -14,7 +14,8 @@ RUN apt-get install -y git apt-utils
 
 # Setup home environment
 RUN useradd ${UNAMEX}
-
+ARG VTK_ROOT=/home/${UNAMEX}/VTK
+ARG LD_LIBRARY_PATH=/usr/local/lib
 # below does not need to be done since on AWS ubuntu instances
 # ubuntu user is added by default
 # it could be useful if we change user name
@@ -29,19 +30,17 @@ RUN cd /home/${UNAMEX}
 RUN pwd
 COPY bash_scripts /home/${UNAMEX}/bash_scripts
 COPY TestingProcedures.md /home/${UNAMEX}
-RUN ls -ltr
-#RUN /bin/bash config_bash.sh
 RUN /bin/bash bash_scripts/inital-setup.sh
 RUN /bin/bash bash_scripts/install-swig.sh
+RUN /bin/bash bash_scripts/install-tcl.sh
 RUN /bin/bash bash_scripts/install-oce.sh
 RUN /bin/bash bash_scripts/install-occ.sh
 RUN /bin/bash bash_scripts/install-pip-vtk.sh
-RUN /bin/bash bash_scripts/install-tcl.sh
 RUN /bin/bash bash_scripts/install-pygem.sh
 RUN /bin/bash bash_scripts/install-rbf.sh
 RUN /bin/bash bash_scripts/install-python-image-write.sh
 RUN /bin/bash bash_scripts/install-vtk-src.sh
-ARG VTK_ROOT=/home/${UNAMEX}/VTK
+
 RUN /bin/bash bash_scripts/install-femtech.sh
 RUN /bin/bash bash_scripts/install-projectedtexture.sh
 RUN /bin/bash bash_scripts/install-complete.sh

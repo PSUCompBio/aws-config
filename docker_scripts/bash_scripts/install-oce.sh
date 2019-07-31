@@ -32,7 +32,7 @@ echo "export PATH" >> /home/$UNAMEX/.bash_profile
 # here RK removed it. Ideally we can figure out ow to use these variables and turn
 # back on.
 #echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib" >> /home/$UNAMEX/.bash_profile
-echo "export LD_LIBRARY_PATH=/usr/local/lib" >> /home/$UNAMEX/.bash_profile
+echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib" >> /home/$UNAMEX/.bash_profile
 source /home/$UNAMEX/.bash_profile
 echo " -------------------------------------------------------------------"
 echo " ----------               Finished Installing OCE             ------"
