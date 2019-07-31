@@ -1,14 +1,10 @@
-source /home/$UNAMEX/.bash_profile
 cd /home/$UNAMEX
-echo $VTK_ROOT
-git clone https://github.com/PSUCompBio/MergePolyData
-cd MergePolyData
+git clone https://gitlab.kitware.com/paraview/paraview.git
+git submodule update --init --recursive
 mkdir build
 cd build
-cmake .. -DVTK_DIR=$VTK_ROOT/build
-make -j 8
 echo " -------------------------------------------------------------------"
-echo " ----------       Completed MergePolyData Install          ------"
+echo " ----------       Completed Paraview Install          ------"
 echo " -------------------------------------------------------------------"
 
 echo "---------------------------------"
