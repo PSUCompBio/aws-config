@@ -2,7 +2,7 @@ cd /home/$UNAMEX
 git clone https://code.qt.io/qt/qt5.git
 cd qt5
 git checkout 5.12
-perl init-repository --module-subset=default,-qtwebengine
+perl init-repository --module-subset=default, qtx11extras
 mkdir build
 cd build
 export LLVM_INSTALL_DIR=/usr/bin/llvm-config
