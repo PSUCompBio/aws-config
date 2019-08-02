@@ -54,6 +54,7 @@ elif [ "$INSTANCE" == "ubuntu" ]; then
         apt-get install -y libqt5x11extras5-dev
         apt-get install -y qttools5-dev
         apt-get install -y qtcreator
+        apt-get install -y libosmesa6 libosmesa6-dev
         # sudo apt-get install -y libtk8.6
         npm i -g npx
         pip3 install numpy matplotlib
