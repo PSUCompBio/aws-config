@@ -4,7 +4,7 @@ cd paraview
 git submodule update --init --recursive
 mkdir build
 cd build
- cmake ../  -DQt5_DIR=/home/ubuntu/qt5/build/qtbase/lib/cmake/Qt5 -DQt5X11Extras_DIR=/home/ubuntu/qt5/build
+cmake ../ -DPARAVIEW_BUILD_QT_GUI=ON
 echo " -------------------------------------------------------------------"
 echo " ----------       Completed Paraview Install          ------"
 echo " -------------------------------------------------------------------"

@@ -34,7 +34,7 @@ COPY TestingProcedures.md /home/${UNAMEX}
 RUN /bin/bash bash_scripts/inital-setup.sh
 RUN /bin/bash bash_scripts/install-swig.sh
 RUN /bin/bash bash_scripts/install-tcl.sh
-RUN /bin/bash bash_scripts/install-qt5.sh
+# RUN /bin/bash bash_scripts/install-qt5.sh
 RUN /bin/bash bash_scripts/install-oce.sh
 RUN /bin/bash bash_scripts/install-occ.sh
 RUN /bin/bash bash_scripts/install-pip-vtk.sh
