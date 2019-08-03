@@ -20,8 +20,27 @@ Login into AWS and make a Ubuntu instance
 sudo docker ps -a OR sudo docker image ls
 
 ### Run the docker image:
-sudo docker run -it  IMAGE_ID
+#### List all docker images : 
+sudo docker ps 
+#### Then find the docker name of your image you build
+sudo docker run -it -p 80:3000 imagename
+#### You will get Docker Shell
+##### Now run these commands to deploy your nodejs service:
+```
+$ cd rbf-brain-nodejs-service
 
+# (Very Important) Update the AWS Credentials in config/configuration_keys.json
+
+# Install global dependency
+$ npm install -g forever
+
+# Run the Service in Background using :
+$ forever start server.js
+
+# THE ENDPOINT OF YOUR NODEJS SERVICE is :
+http:your-domain-name.com/api/
+
+```
 #### Once inside the image:
  - You can see the TestingProcedures.md to check all the codes that were compiled.
 

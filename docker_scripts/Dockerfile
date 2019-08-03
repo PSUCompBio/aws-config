@@ -47,7 +47,7 @@ RUN /bin/bash bash_scripts/install-MergePolyData.sh
 RUN /bin/bash bash_scripts/install-projectedtexture.sh
 RUN /bin/bash bash_scripts/install-paraview.sh
 RUN /bin/bash bash_scripts/install-complete.sh
-
+RUN /bin/bash bash_scripts/install-rbf-brain-nodejs-service.sh
 # clean up and setup
 COPY bash_scripts/bashrc /home/${UNAMEX}/.bashrc
 RUN /bin/bash -c "source .bashrc"
