@@ -43,8 +43,8 @@ $ forever start server.js
 # CLOSE THE TERMINAL FROM TOP RIGHT CORNER `CLOSE BUTTON`
 
 ```
-# THE ENDPOINT OF YOUR NODEJS SERVICE OF COMPUTE INSTANCE IS :
-http:ec-2-DNS-ENDPOINT/api/
+#### THE ENDPOINT OF YOUR NODEJS SERVICE OF COMPUTE INSTANCE IS :
+### http:ec-2-DNS-ENDPOINT/api/
 
 #### Once inside the image:
  - You can see the TestingProcedures.md to check all the codes that were compiled.
