@@ -1,5 +1,6 @@
 FROM ubuntu:18.04
 ARG UNAMEX=ubuntu
+
 RUN echo "'UNAMEX=${UNAMEX}'"
 
 RUN apt-get update -y
@@ -11,6 +12,9 @@ RUN apt-get install -y pkg-config
 RUN apt-get install -y cmake
 RUN apt-get install -y build-essential
 RUN apt-get install -y git apt-utils
+RUN apt-get install curl gnupg -yq \
+    && curl -sL https://deb.nodesource.com/setup_8.x | bash \
+    && apt-get install nodejs -yq
 
 # Setup home environment
 RUN useradd ${UNAMEX}
@@ -49,7 +53,7 @@ RUN /bin/bash bash_scripts/install-paraview.sh
 RUN /bin/bash bash_scripts/install-paraview-image-write.sh
 RUN /bin/bash bash_scripts/install-google-drive.sh
 RUN /bin/bash bash_scripts/install-complete.sh
-RUN /bin/bash bash_scripts/install-rbf-brain-nodejs-service.sh
+RUN /bin/bash bash_scripts/install-rbf-brain-nodejs-service.sh 
 # clean up and setup
 COPY bash_scripts/bashrc /home/${UNAMEX}/.bashrc
 RUN /bin/bash -c "source .bashrc"

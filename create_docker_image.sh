@@ -3,6 +3,11 @@
 INSTANCE="ubuntu"
 #
 
+AWSACCESSKEY=<REPLACE WITH YOUR AWS ACCESS KEY>
+AWSSECRETKEY=<REPLACE WITH YOU AWS SECRET KEY>
+REGION=<REPLACE WITH YOUR AWS REGION>
+USERBUCKET=<REPLACE WITH YOU USER BUCKET>
+
 echo "SCRIPT START TIME"
 date
 
@@ -37,6 +42,6 @@ systemctl enable docker
 # clone master branch
 git clone https://github.com/PSUCompBio/aws-config.git
 cd aws-config/docker_scripts
-docker build -t nsfcareer .
+docker build -t nsfcareer . 
 cd /home/$UNAMEX
 sudo chown -R ubuntu *
