@@ -1,11 +1,10 @@
 cd /home/$UNAMEX
-git clone https://github.com/PSUCompBio/vtk-image-write
-cd vtk-image-write
-xvfb-run --server-args="-screen 0 1024x768x24" python3 write-image.py
+git clone https://github.com/PSUCompBio/paraview-image-write
+cd paraview-image-write
+xvfb-run -a --server-args="-screen 0 1024x768x24" pvpython ppr1.py
 echo " -------------------------------------------------------------------"
-echo " ----------             Complete Image Write Test              ------"
+echo " ----------    Complete Paraview Image Write Test             ------"
 echo " -------------------------------------------------------------------"
-
 echo "---------------------------------"
 date
 echo "-----------------------------------"

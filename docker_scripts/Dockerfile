@@ -46,6 +46,8 @@ RUN /bin/bash bash_scripts/install-femtech.sh
 RUN /bin/bash bash_scripts/install-MergePolyData.sh
 RUN /bin/bash bash_scripts/install-projectedtexture.sh
 RUN /bin/bash bash_scripts/install-paraview.sh
+RUN /bin/bash bash_scripts/install-paraview-image-write.sh
+RUN /bin/bash bash_scripts/install-google-drive.sh
 RUN /bin/bash bash_scripts/install-complete.sh
 RUN /bin/bash bash_scripts/install-rbf-brain-nodejs-service.sh
 # clean up and setup
