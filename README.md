@@ -5,7 +5,7 @@ Basically, after creating an instance we install docker on the instance and then
 
 The dockerfile calls the docker_scripts/config_bash.sh script that has all the steps to make our environment.
 
- ## to create docker image
+ ## To create docker image
 Login into AWS and make a Ubuntu instance
  - Step 1 Choose an Instance: Ubuntu Server 18.04 LTS, 64 bit, General Purpose
  - Step 2 Choose and Instance Type: t2.2xlarge (8 vCPUs, 32 GiB)
@@ -20,7 +20,31 @@ Login into AWS and make a Ubuntu instance
 sudo docker ps -a OR sudo docker image ls
 
 ### Run the docker image:
-sudo docker run -it  IMAGE_ID
+#### List all docker images : 
+sudo docker ps 
+#### Then find the docker name of your image you build
+sudo docker run -it -p 80:3000 imagename
+#### You will get Docker Shell
+```
+# Run the following commands : 
+
+$ cd /home/ubuntu/rbf-brain-nodejs-service
+
+# Update the AWS Credentials
+$ vim config/configuration_keys.json
+
+# Save changes in configuration_keys.json file
+
+# Now run command to set up node process for production
+$ forever start server.js
+
+# VERY IMPORTANT AFTER EXECUTING THE ABOVE COMMANDS
+# DON'T EXIT TERMINAL BY TYPING `exit` in TERMINAL INSTEAD 
+# CLOSE THE TERMINAL FROM TOP RIGHT CORNER `CLOSE BUTTON`
+
+```
+#### THE ENDPOINT OF YOUR NODEJS SERVICE OF COMPUTE INSTANCE IS :
+### http:ec-2-DNS-ENDPOINT/api/
 
 #### Once inside the image:
  - You can see the TestingProcedures.md to check all the codes that were compiled.
