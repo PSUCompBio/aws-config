@@ -1,5 +1,5 @@
 cd /home/$UNAMEX
-git clone https://github.com/vradars/rbf-brain-nodejs-service.git
+git clone https://github.com/PSUCompBio/rbf-brain-nodejs-service.git
 cd rbf-brain-nodejs-service
 npm install
 npm install -g forever
