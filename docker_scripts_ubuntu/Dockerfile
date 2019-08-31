@@ -1,5 +1,6 @@
 FROM ubuntu:18.04
 ARG UNAMEX=ubuntu
+ARG INSTANCE_TYPE=ami
 RUN echo "'UNAMEX=${UNAMEX}'"
 
 RUN apt-get update -y
@@ -29,7 +30,7 @@ RUN chown -R ${UNAMEX} /home/${UNAMEX}
 
 RUN cd /home/${UNAMEX}
 RUN pwd
-COPY bash_scripts /home/${UNAMEX}/bash_scripts
+COPY bash_scripts_${INSTANCE_TYPE} /home/${UNAMEX}/bash_scripts
 COPY TestingProcedures.md /home/${UNAMEX}
 RUN /bin/bash bash_scripts/inital-setup.sh
 RUN /bin/bash bash_scripts/install-swig.sh
