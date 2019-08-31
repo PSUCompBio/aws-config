@@ -1,4 +1,6 @@
 cd /home/$UNAMEX
+yum install pcre.x86_64 pcre-static.x86_64  pcre-devel.x86_64 -y
+yum install bison -y 
 git clone https://github.com/swig/swig.git
 cd swig
 ./autogen.sh
