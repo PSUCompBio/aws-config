@@ -1,5 +1,9 @@
 cd /home/$UNAMEX
 #git clone https://github.com/tpaviot/oce.git
+yum install -y freetype-devel.x86_64
+yum install -y fontconfig
+yum install -y fontconfig-devel
+yum install -y freeglut-devel
 git clone https://github.com/PSUCompBio/oce.git
 echo "-------------OCE CLONE FINISH TIME--------------------"
 date

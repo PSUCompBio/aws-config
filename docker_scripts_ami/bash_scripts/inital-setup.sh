@@ -2,7 +2,7 @@
 #
 cd /home/$UNAMEX
 echo "Now in /home/$UNAMEX"
-
+yum install -y wget
 yum install -y mesa-libGL
 yum install -y mesa-libGL-devel
 yum install -y mesa-libGLES
