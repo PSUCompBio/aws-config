@@ -5,10 +5,8 @@ RUN echo "'UNAMEX=${UNAMEX}'"
 RUN yum update -y
 RUN yum install git -y
 RUN yum install python3 -y
-
-#RUN apt-get install -y curl
-#RUN apt-get install -y vim
-#RUN apt-get install -y pkg-config
-#RUN apt-get install -y cmake
-#RUN apt-get install -y build-essential
-#RUN apt-get install -y git apt-utils
+RUN yum install curl -y
+RUN yum install vim -y
+RUN yum install pkgconfig -y
+RUN yum install cmake -y
+RUN yum install make automake gcc gcc-c++ kernel-devel -y 
