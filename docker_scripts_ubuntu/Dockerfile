@@ -18,11 +18,6 @@ RUN useradd ${UNAMEX}
 ARG VTK_ROOT=/home/${UNAMEX}/VTK
 ARG LD_LIBRARY_PATH=/usr/local/lib
 
-# below does not need to be done since on AWS ubuntu instances
-# ubuntu user is added by default
-# it could be useful if we change user name
-#RUN mkdir /home/${UNAMEX} && chown -R ${UNAMEX}: /home/${UNAMEX}
-
 WORKDIR /home/${UNAMEX}
 ENV HOME /home/${UNAMEX}
 RUN touch /home/${UNAMEX}/.bash_profile
@@ -30,7 +25,7 @@ RUN chown -R ${UNAMEX} /home/${UNAMEX}
 
 RUN cd /home/${UNAMEX}
 RUN pwd
-COPY bash_scripts_${INSTANCE_TYPE} /home/${UNAMEX}/bash_scripts
+COPY bash_scripts /home/${UNAMEX}/bash_scripts
 COPY TestingProcedures.md /home/${UNAMEX}
 RUN /bin/bash bash_scripts/inital-setup.sh
 RUN /bin/bash bash_scripts/install-swig.sh
