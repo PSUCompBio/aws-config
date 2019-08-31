@@ -45,6 +45,6 @@ git clone -b ami-setup https://github.com/PSUCompBio/aws-config.git
 # clone master branch
 #git clone https://github.com/PSUCompBio/aws-config.git
 cd aws-config/docker_scripts_$INSTANCE_TYPE
-#docker build -t nsfcareer .
-#cd /home/$UNAMEX
-#sudo chown -R ubuntu *
+docker build -t nsfcareer .
+cd /home/$UNAMEX
+sudo chown -R $UNAMEX  *
