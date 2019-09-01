@@ -20,7 +20,7 @@ if [ "$INSTANCE_TYPE" == "ami" ]; then
         NCPUS_VAR=$(nproc)
         echo "ncpus = $NCPUS_VAR"
         sudo yum update -y
-        sudo amazon-linux-extras install docker -y
+        sudo yum install docker -y
         sudo yum install git -y
         sudo service docker start
         sudo usermod -a -G docker $UNAMEX
