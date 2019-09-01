@@ -34,7 +34,7 @@ RUN /bin/bash bash_scripts/install-swig.sh
 RUN /bin/bash bash_scripts/install-tcl.sh
 # don't need this.... RUN /bin/bash bash_scripts/install-qt5.sh
 RUN /bin/bash bash_scripts/install-oce.sh
-#RUN /bin/bash bash_scripts/install-occ.sh
+RUN /bin/bash bash_scripts/install-occ.sh
 #RUN /bin/bash bash_scripts/install-pip-vtk.sh
 #RUN /bin/bash bash_scripts/install-pygem.sh
 #RUN /bin/bash bash_scripts/install-rbf.sh
