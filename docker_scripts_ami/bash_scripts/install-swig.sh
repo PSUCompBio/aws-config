@@ -1,11 +1,11 @@
 cd /home/$UNAMEX
 yum install pcre.x86_64 pcre-static.x86_64  pcre-devel.x86_64 -y
-yum install bison -y 
+yum install bison -y
 git clone https://github.com/swig/swig.git
 cd swig
 ./autogen.sh
 ./configure
-make -j8
+make -j $NCPUS_VAR
 make install
 echo " -------------------------------------------------------------------"
 echo " ----------              Finished Installing Swig             ------"

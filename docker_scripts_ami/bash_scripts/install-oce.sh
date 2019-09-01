@@ -15,7 +15,7 @@ echo "------------python oce make start---------------------"
 date
 echo "-----------------------------------"
 cmake ..
-make -j8
+make -j $NCPUS_VAR
 make install
 echo "-------------python oce make end--------------------"
 date

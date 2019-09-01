@@ -6,7 +6,7 @@ cd ProjectedTexture-VTK
 mkdir build
 cd build
 cmake .. -DVTK_DIR=$VTK_ROOT/build
-make -j8
+make -j $NCPUS_VAR
 echo " -------------------------------------------------------------------"
 echo " ----------       Completed ProjectedTexture Install          ------"
 echo " -------------------------------------------------------------------"

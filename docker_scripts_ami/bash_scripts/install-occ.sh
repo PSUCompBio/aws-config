@@ -10,7 +10,7 @@ echo "-------python occ cmake start-------------------------"
 date
 echo "-----------------------------------"
 cmake .. -DPYTHONOCC_INSTALL_DIRECTORY:PATH=/usr/lib/python3.6/dist-packages/OCC
-make -j"$(nproc)"
+make -j $NCPUS_VAR
 echo "-------------python occ make install start--------------------"
 date
 echo "-----------------------------------"

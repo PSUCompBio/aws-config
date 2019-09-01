@@ -6,7 +6,7 @@ cd MergePolyData
 mkdir build
 cd build
 cmake .. -DVTK_DIR=$VTK_ROOT/build
-make -j 8
+make -j $NCPUS_VAR
 echo " -------------------------------------------------------------------"
 echo " ----------       Completed MergePolyData Install          ------"
 echo " -------------------------------------------------------------------"

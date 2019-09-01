@@ -5,7 +5,7 @@ tar -xvf tcl8.6.9-src.tar
 rm tcl8.6.9-src.tar
 cd tcl8.6.9/unix
 ./configure
-make -j 8
+make -j $NCPUS_VAR
 make test
 make install
 echo " -------------------------------------------------------------------"

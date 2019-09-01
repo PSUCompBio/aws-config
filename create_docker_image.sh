@@ -52,6 +52,6 @@ docker build \
       --build-arg INSTANCE_TYPE=${INSTANCE_TYPE} \
       --build-arg UNAMEX=${UNAMEX} \
       --build-arg NCPUS_VAR=${NCPUS_VAR} \
-      -t nsfcareer .
+      -t nsfcareer.${INSTANCE_TYPE} .
 cd /home/$UNAMEX
 sudo chown -R $UNAMEX  *
