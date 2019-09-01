@@ -1,8 +1,11 @@
 FROM amazonlinux:2
 ARG UNAMEX=ec2_user
 ARG INSTANCE_TYPE=ami
+ARG NCPUS_VAR=$(nproc)
+
 RUN echo "'UNAMEX=${UNAMEX}'"
 RUN echo "'INSTANCE_TYPE=${INSTANCE_TYPE}'"
+RUN echo "'NCPUS_VAR=${NCPUS_VAR}'"
 
 RUN yum update -y
 RUN yum install git -y
