@@ -16,6 +16,9 @@ echo " -------------------------------------------------------------------"
 if [ "$INSTANCE_TYPE" == "ami" ]; then
         UNAMEX="ec2-user"
         HOME="/home/ec2-user"
+        nproc
+        NCPUS_VAR=$(nproc)
+        echo "ncpus = $NCPUS_VAR"
         sudo yum update -y
         sudo amazon-linux-extras install docker -y
         sudo yum install git -y
@@ -45,6 +48,6 @@ git clone -b ami-setup https://github.com/PSUCompBio/aws-config.git
 # clone master branch
 #git clone https://github.com/PSUCompBio/aws-config.git
 cd aws-config/docker_scripts_$INSTANCE_TYPE
-docker build -t nsfcareer .
+docker build --build-arg NCPUS_VAR=${NCPUS_VAR} -t nsfcareer .
 cd /home/$UNAMEX
 sudo chown -R $UNAMEX  *

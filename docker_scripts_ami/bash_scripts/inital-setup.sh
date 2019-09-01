@@ -13,9 +13,6 @@ echo "alias l='ls -ltr' " >> /home/$UNAMEX/.bash_profile
 echo "alias h='history' " >> /home/$UNAMEX/.bash_profile
 echo "alias python='python3' " >> /home/$UNAMEX/.bash_profile
 source /home/$UNAMEX/.bash_profile
-nproc
-NCPUS_VAR=$(nproc)
-echo "ncpus = $NCPUS_VAR"
 echo " -------------------------------------------------------------------"
 echo " ----------       Finished Installing Essential Dev Tools     ------"
 echo " -------------------------------------------------------------------"
