@@ -48,6 +48,10 @@ git clone -b ami-setup https://github.com/PSUCompBio/aws-config.git
 # clone master branch
 #git clone https://github.com/PSUCompBio/aws-config.git
 cd aws-config/docker_scripts_$INSTANCE_TYPE
-docker build --build-arg NCPUS_VAR=${NCPUS_VAR} -t nsfcareer .
+docker build \
+      --build-arg INSTANCE_TYPE=${INSTANCE_TYPE} \
+      --build-arg UNAMEX=${UNAMEX} \
+      --build-arg NCPUS_VAR=${NCPUS_VAR} \
+      -t nsfcareer .
 cd /home/$UNAMEX
 sudo chown -R $UNAMEX  *

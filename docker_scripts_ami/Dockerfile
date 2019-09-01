@@ -1,7 +1,7 @@
 FROM amazonlinux:2
-ARG UNAMEX=ec2_user
-ARG INSTANCE_TYPE=ami
-ARG NCPUS_VAR=$(nproc)
+#ARG UNAMEX=ec2_user
+#ARG INSTANCE_TYPE=ami
+#ARG NCPUS_VAR=$(nproc)
 
 RUN echo "'UNAMEX=${UNAMEX}'"
 RUN echo "'INSTANCE_TYPE=${INSTANCE_TYPE}'"
