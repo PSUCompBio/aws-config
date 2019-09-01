@@ -9,7 +9,7 @@ RUN echo "'NCPUS_VAR=${NCPUS_VAR}'"
 
 RUN yum update -y
 RUN yum install git -y
-RUN yum install python3 -y
+RUN yum install python3 python3-devel -y
 RUN yum install curl -y
 RUN yum install vim -y
 RUN yum install pkgconfig -y
@@ -37,7 +37,7 @@ RUN /bin/bash bash_scripts/install-swig.sh
 RUN /bin/bash bash_scripts/install-tcl.sh
 # don't need this.... RUN /bin/bash bash_scripts/install-qt5.sh
 RUN /bin/bash bash_scripts/install-oce.sh
-#RUN /bin/bash bash_scripts/install-occ.sh
+RUN /bin/bash bash_scripts/install-occ.sh
 #RUN /bin/bash bash_scripts/install-pip-vtk.sh
 #RUN /bin/bash bash_scripts/install-pygem.sh
 #RUN /bin/bash bash_scripts/install-rbf.sh
