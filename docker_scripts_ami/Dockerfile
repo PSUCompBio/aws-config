@@ -24,13 +24,15 @@ ARG LD_LIBRARY_PATH=/usr/local/lib
 
 WORKDIR /home/${UNAMEX}
 ENV HOME /home/${UNAMEX}
-RUN touch /home/${UNAMEX}/.bash_profile
+#RUN touch /home/${UNAMEX}/.bash_profile
 RUN chown -R ${UNAMEX} /home/${UNAMEX}
 
 
 RUN cd /home/${UNAMEX}
 RUN pwd
 COPY bash_scripts /home/${UNAMEX}/bash_scripts
+COPY bash_scripts/bashrc /home/${UNAMEX}/.bashrc
+COPY bash_scripts/.bash_profile /home/${UNAMEX}/.bash_profile
 COPY TestingProcedures.md /home/${UNAMEX}
 
 RUN /bin/bash bash_scripts/inital-setup.sh
@@ -45,7 +47,7 @@ RUN /bin/bash bash_scripts/install-rbf.sh
 RUN /bin/bash bash_scripts/install-python-image-write.sh
 RUN /bin/bash bash_scripts/install-vtk-src.sh
 RUN /bin/bash bash_scripts/install-femtech.sh
-#RUN /bin/bash bash_scripts/install-MergePolyData.sh
+RUN /bin/bash bash_scripts/install-MergePolyData.sh
 #RUN /bin/bash bash_scripts/install-projectedtexture.sh
 #RUN /bin/bash bash_scripts/install-paraview.sh
 #RUN /bin/bash bash_scripts/install-paraview-image-write.sh
