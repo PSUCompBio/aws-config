@@ -8,13 +8,14 @@ RUN echo "'INSTANCE_TYPE=${INSTANCE_TYPE}'"
 RUN echo "'NCPUS_VAR=${NCPUS_VAR}'"
 
 RUN yum update -y
-RUN yum install git -y
-RUN yum install python3 python3-devel -y
-RUN yum install curl -y
-RUN yum install vim -y
-RUN yum install pkgconfig -y
-RUN yum install cmake -y
-RUN yum install make automake gcc gcc-c++ kernel-devel -y
+RUN yum install -y git
+RUN yum install -y python3 python3-devel
+RUN yum install -y curl
+RUN yum install -y vim
+RUN yum install -y pkgconfig
+RUN yum install -y cmake3
+RUN yum install -y make automake gcc gcc-c++ kernel-devel
+RUN yum install -y openmpi openmpi-devel
 
 # Setup home environment
 RUN useradd ${UNAMEX}
@@ -40,10 +41,10 @@ RUN /bin/bash bash_scripts/install-oce.sh
 RUN /bin/bash bash_scripts/install-occ.sh
 RUN /bin/bash bash_scripts/install-pip-vtk.sh
 RUN /bin/bash bash_scripts/install-pygem.sh
-#RUN /bin/bash bash_scripts/install-rbf.sh
-#RUN /bin/bash bash_scripts/install-python-image-write.sh
-#RUN /bin/bash bash_scripts/install-vtk-src.sh
-#RUN /bin/bash bash_scripts/install-femtech.sh
+RUN /bin/bash bash_scripts/install-rbf.sh
+RUN /bin/bash bash_scripts/install-python-image-write.sh
+RUN /bin/bash bash_scripts/install-vtk-src.sh
+RUN /bin/bash bash_scripts/install-femtech.sh
 #RUN /bin/bash bash_scripts/install-MergePolyData.sh
 #RUN /bin/bash bash_scripts/install-projectedtexture.sh
 #RUN /bin/bash bash_scripts/install-paraview.sh
