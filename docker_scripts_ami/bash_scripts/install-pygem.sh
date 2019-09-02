@@ -5,6 +5,10 @@ cp /home/$UNAMEX/rbf-brain/__init__.py /home/$UNAMEX/PyGeM/pygem
 cd /home/$UNAMEX/PyGeM
 #source /home/$UNAMEX/.bashrc
 #/home/$UNAMEX/$CONDAVAR/bin/python2 setup.py install
+pip3 install --upgrade --force-reinstall setuptools
+PYTHONPATH=$(python3 -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")
+#mkdir /usr/local/lib/python3.7/
+#mkdir /usr/local/lib/python3.7/site-packages
 python3 setup.py install
 #/home/$UNAMEX/$CONDAVAR/bin/pip install --upgrade pip
 #/home/$UNAMEX/$CONDAVAR/bin/pip install runipy

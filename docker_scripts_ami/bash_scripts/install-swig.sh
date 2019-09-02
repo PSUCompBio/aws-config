@@ -4,7 +4,7 @@ yum install bison -y
 git clone https://github.com/swig/swig.git
 cd swig
 ./autogen.sh
-./configure
+./configure --with-python=python3
 make -j $NCPUS_VAR
 make install
 echo " -------------------------------------------------------------------"
