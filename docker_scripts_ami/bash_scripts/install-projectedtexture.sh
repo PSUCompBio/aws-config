@@ -5,7 +5,7 @@ git clone https://github.com/PSUCompBio/ProjectedTexture-VTK
 cd ProjectedTexture-VTK
 mkdir build
 cd build
-cmake .. -DVTK_DIR=$VTK_ROOT/build
+cmake3 .. -DVTK_DIR=$VTK_ROOT/build
 make -j $NCPUS_VAR
 echo " -------------------------------------------------------------------"
 echo " ----------       Completed ProjectedTexture Install          ------"
