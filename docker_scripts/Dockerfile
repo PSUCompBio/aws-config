@@ -54,6 +54,15 @@ RUN /bin/bash bash_scripts/install-paraview-image-write.sh
 RUN /bin/bash bash_scripts/install-google-drive.sh
 RUN /bin/bash bash_scripts/install-complete.sh
 RUN /bin/bash bash_scripts/install-rbf-brain-nodejs-service.sh 
+
+# Adding Dependencies for RBF-BRAIN-NODEJS_SERVICE
+RUN apt-get update --fix-missing
+RUN apt install zip -y
+RUN apt install python-pip -y
+RUN pip install requests
+RUN pip install pillow
+
+
 # clean up and setup
 COPY bash_scripts/bashrc /home/${UNAMEX}/.bashrc
 RUN /bin/bash -c "source .bashrc"
