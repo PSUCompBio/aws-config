@@ -7,6 +7,9 @@ mkdir build
 cd build
 cmake .. -DVTK_DIR=$VTK_ROOT/build
 make -j8
+xvfb-run ./ProjectedTexture ../model.ply ../model.jpg  test.png
+cd /home/$UNAMEX/ProjectedTexture-VTK
+bin/bash pass_check.sh
 echo " -------------------------------------------------------------------"
 echo " ----------       Completed ProjectedTexture Install          ------"
 echo " -------------------------------------------------------------------"

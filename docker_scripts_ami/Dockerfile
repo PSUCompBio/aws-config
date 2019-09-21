@@ -36,6 +36,9 @@ COPY TestingProcedures.md /home/${UNAMEX}
 RUN /bin/bash bash_scripts/inital-setup.sh
 RUN /bin/bash bash_scripts/install-swig.sh
 RUN /bin/bash bash_scripts/install-tcl.sh
+#RUN /bin/bash bash_scripts/install-paraview.sh
+#RUN /bin/bash bash_scripts/install-paraview-image-write.sh
+#RUN /bin/bash bash_scripts/install-google-drive.sh
 RUN /bin/bash bash_scripts/install-mesa-vtk.sh
 RUN /bin/bash bash_scripts/install-vtk-src.sh
 # don't need this.... RUN /bin/bash bash_scripts/install-qt5.sh
@@ -50,9 +53,7 @@ RUN /bin/bash bash_scripts/install-vtk-src.sh
 #RUN /bin/bash bash_scripts/install-femtech.sh
 #RUN /bin/bash bash_scripts/install-MergePolyData.sh
 #RUN /bin/bash bash_scripts/install-projectedtexture.sh
-#RUN /bin/bash bash_scripts/install-paraview.sh
-#RUN /bin/bash bash_scripts/install-paraview-image-write.sh
-#RUN /bin/bash bash_scripts/install-google-drive.sh
+
 RUN /bin/bash bash_scripts/install-complete.sh
 
 # clean up and setup

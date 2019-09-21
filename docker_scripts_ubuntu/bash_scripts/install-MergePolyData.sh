@@ -7,6 +7,8 @@ mkdir build
 cd build
 cmake .. -DVTK_DIR=$VTK_ROOT/build
 make -j 8
+cd /home/$UNAMEX/MergePolyData
+/bin/bash pass_check.sh
 echo " -------------------------------------------------------------------"
 echo " ----------       Completed MergePolyData Install          ------"
 echo " -------------------------------------------------------------------"
