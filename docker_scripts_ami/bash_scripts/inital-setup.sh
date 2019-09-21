@@ -9,7 +9,7 @@ yum install -y mesa-libGLES
 yum install -y mesa-libGLES-devel
 yum install -y xorg-x11-server-Xvfb
 yum install -y libXt-devel
-yum install -y mesa-libOSMesa.x86_64 mesa-libOSMesa-devel.x86_64
+yum install -y  mesa-libOSMesa mesa-libOSMesa-devel
 yum install -y mesa-libEGL-devel
 yum install -y openmpi openmpi-devel
 echo "alias l='ls -ltr' " >> /home/$UNAMEX/.bash_profile
