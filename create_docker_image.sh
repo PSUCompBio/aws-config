@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-#INSTANCE_TYPE="ubuntu"
-INSTANCE_TYPE="ami"
+INSTANCE_TYPE="ubuntu"
+#INSTANCE_TYPE="ami"
 #
 
 echo "SCRIPT START TIME"
