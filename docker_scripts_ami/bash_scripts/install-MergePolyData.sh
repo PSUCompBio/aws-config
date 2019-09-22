@@ -7,6 +7,7 @@ mkdir build
 cd build
 cmake3 .. -DVTK_DIR=$VTK_ROOT/build
 make -j $NCPUS_VAR
+xvfb-run ./ImageCapture examples/ply-to-png/model.ply  examples/ply-to-png/model.jpg examples/ply-to-png/test.png
 cd /home/$UNAMEX/MergePolyData
 /bin/bash pass_check.sh
 echo " -------------------------------------------------------------------"
