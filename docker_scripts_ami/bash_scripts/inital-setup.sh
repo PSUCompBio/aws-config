@@ -15,6 +15,7 @@ yum install -y openmpi openmpi-devel
 echo "alias l='ls -ltr' " >> /home/$UNAMEX/.bash_profile
 echo "alias h='history' " >> /home/$UNAMEX/.bash_profile
 echo "alias python='python3' " >> /home/$UNAMEX/.bash_profile
+echo "LD_LIBRARY_PATH=/lib:/lib64:/usr/local/lib" >> /home/$UNAMEX/.bash_profile
 source /home/$UNAMEX/.bash_profile
 echo " -------------------------------------------------------------------"
 echo " ----------       Finished Installing Essential Dev Tools     ------"
