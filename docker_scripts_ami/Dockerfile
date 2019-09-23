@@ -38,6 +38,7 @@ RUN /bin/bash bash_scripts/install-swig.sh
 RUN /bin/bash bash_scripts/install-tcl.sh
 RUN /bin/bash bash_scripts/install-paraview.sh
 RUN /bin/bash bash_scripts/install-paraview-image-write.sh
+RUN /bin/bash bash_scripts/install-python-image-write.sh
 RUN /bin/bash bash_scripts/install-google-drive.sh
 ##RUN /bin/bash bash_scripts/install-mesa-vtk.sh
 ##RUN /bin/bash bash_scripts/install-vtk-src.sh
@@ -47,7 +48,7 @@ RUN /bin/bash bash_scripts/install-google-drive.sh
 #RUN /bin/bash bash_scripts/install-pip-vtk.sh
 #RUN /bin/bash bash_scripts/install-pygem.sh
 #RUN /bin/bash bash_scripts/install-rbf.sh
-#RUN /bin/bash bash_scripts/install-python-image-write.sh
+
 #RUN /bin/bash bash_scripts/install-mesa-vtk.sh
 ##RUN /bin/bash bash_scripts/install-vtk-src.sh
 #RUN /bin/bash bash_scripts/install-femtech.sh
