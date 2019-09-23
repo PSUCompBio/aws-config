@@ -21,8 +21,10 @@ cmake3     -DBUILD_SHARED_LIBS=ON     -DVTK_WRAP_PYTHON=ON     -DVTK_USE_X=OFF  
 make -j $NCPUS_VAR
 make install
 cd /home/$UNAMEX
-echo "export LD_LIBRARY_PATH=$VTK_ROOT/build/bin:$VTK_ROOT/build/lib:$LD_LIBRARY_PATH" >> /home/$UNAMEX/.bash_profile
+echo "#VTK_ROOT written from inital-vtk-src.sh" >> /home/$UNAMEX/.bash_profile
 echo "VTK_ROOT=/home/$UNAMEX/VTK" >> /home/$UNAMEX/.bash_profile
+echo "#LD_LIBRARY_PATH written from inital-vtk-src.sh" >> /home/$UNAMEX/.bash_profile
+echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:\$VTK_ROOT/build/bin:\$VTK_ROOT/build/lib" >> /home/$UNAMEX/.bash_profile
 source /home/$UNAMEX/.bash_profile
 echo " -------------------------------------------------------------------"
 echo " ----------               Complete VTK Install                ------"
