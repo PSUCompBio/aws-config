@@ -8,7 +8,8 @@ yum install -y wget
 #yum install -y mesa-libGLES
 #yum install -y mesa-libGLES-devel
 yum install -y xorg-x11-server-Xvfb
-#yum install -y libXt-devel
+# for vtk-src
+yum install -y libXt libXt-devel
 #yum install -y  mesa-libOSMesa mesa-libOSMesa-devel
 #yum install -y mesa-libEGL-devel
 yum install -y openmpi openmpi-devel

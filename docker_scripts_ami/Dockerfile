@@ -44,17 +44,13 @@ RUN /bin/bash bash_scripts/install-oce.sh
 RUN /bin/bash bash_scripts/install-occ.sh
 RUN /bin/bash bash_scripts/install-pygem.sh
 RUN /bin/bash bash_scripts/install-rbf.sh
-######
 ##RUN /bin/bash bash_scripts/install-mesa-vtk.sh
-##RUN /bin/bash bash_scripts/install-vtk-src.sh
+RUN /bin/bash bash_scripts/install-vtk-src.sh
+RUN /bin/bash bash_scripts/install-MergePolyData.sh
+RUN /bin/bash bash_scripts/install-projectedtexture.sh
 # don't need this.... RUN /bin/bash bash_scripts/install-qt5.sh
-#RUN /bin/bash bash_scripts/install-pip-vtk.sh
-#RUN /bin/bash bash_scripts/install-mesa-vtk.sh
-##RUN /bin/bash bash_scripts/install-vtk-src.sh
+## vtk now provided by paraview .... do not need. RUN /bin/bash bash_scripts/install-pip-vtk.sh
 #RUN /bin/bash bash_scripts/install-femtech.sh
-#RUN /bin/bash bash_scripts/install-MergePolyData.sh
-#RUN /bin/bash bash_scripts/install-projectedtexture.sh
-
 RUN /bin/bash bash_scripts/install-complete.sh
 
 # clean up and setup
