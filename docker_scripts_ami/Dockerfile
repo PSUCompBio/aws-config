@@ -44,9 +44,9 @@ RUN /bin/bash bash_scripts/install-oce.sh
 RUN /bin/bash bash_scripts/install-occ.sh
 RUN /bin/bash bash_scripts/install-pygem.sh
 RUN /bin/bash bash_scripts/install-rbf.sh
-#RUN /bin/bash bash_scripts/install-vtk-src.sh
-#RUN /bin/bash bash_scripts/install-MergePolyData.sh
-#RUN /bin/bash bash_scripts/install-femtech.sh
+RUN /bin/bash bash_scripts/install-vtk-src.sh
+RUN /bin/bash bash_scripts/install-MergePolyData.sh
+RUN /bin/bash bash_scripts/install-femtech.sh
 RUN /bin/bash bash_scripts/install-complete.sh
 
 ##RUN /bin/bash bash_scripts/install-mesa-vtk.sh
