@@ -11,7 +11,7 @@ cd build
 cmake ..
 make -j $NCPUS_VAR
 make install
-echo "#PATH written from inital_oce.sh" >> /home/$UNAMEX/.bash_profile
+echo "#PATH written from install_oce.sh" >> /home/$UNAMEX/.bash_profile
 echo "PATH=\$PATH:/usr/local/bin" >> /home/$UNAMEX/.bash_profile
 # note: the variable $LD_LIBRARY_PATH was not being recognized by Docker so
 # here RK removed it. Ideally we can figure out ow to use these variables and turn
