@@ -50,7 +50,7 @@ RUN /bin/bash bash_scripts/install-MergePolyData.sh
 RUN /bin/bash bash_scripts/install-projectedtexture.sh
 # don't need this.... RUN /bin/bash bash_scripts/install-qt5.sh
 ## vtk now provided by paraview .... do not need. RUN /bin/bash bash_scripts/install-pip-vtk.sh
-#RUN /bin/bash bash_scripts/install-femtech.sh
+RUN /bin/bash bash_scripts/install-femtech.sh
 RUN /bin/bash bash_scripts/install-complete.sh
 
 # clean up and setup
