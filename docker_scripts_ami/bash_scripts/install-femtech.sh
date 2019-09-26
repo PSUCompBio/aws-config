@@ -14,7 +14,7 @@ echo "PATH=\$PATH:/usr/lib64/openmpi/bin" >> /home/$UNAMEX/.bash_profile
 echo " " >> /home/$UNAMEX/.bash_profile
 source /home/$UNAMEX/.bash_profile
 cd examples/ex9
-mpirun --allow-run-as-root -np 8  --mca btl_base_warn_component_unused 0  -mca btl_vader_single_copy_mechanism none ex9 1-elt-cube.k
+mpirun --allow-run-as-root -np 1  --mca btl_base_warn_component_unused 0  -mca btl_vader_single_copy_mechanism none ex9 1-elt-cube.k
 git clone https://github.com/PSUCompBio/femtech-aws-pass-check
 cp femtech-aws-pass-check/pass_check.sh .
 /bin/bash pass_check.sh
