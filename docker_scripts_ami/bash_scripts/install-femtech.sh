@@ -4,7 +4,7 @@ git clone -b develop https://github.com/PSUCompBio/FemTech
 cd FemTech
 mkdir build
 cd build
-cmake3 .. -DEXAMPLES=ON -DEXAMPLE5=ON -DEXAMPLE9=ON \
+cmake3 .. -DEXAMPLES=ON -DEXAMPLE5=ON  \
           -DMPI_CXX_COMPILER=/usr/lib64/openmpi/bin/mpicxx \
           -DMPI_C_COMPILER=/usr/lib64/openmpi/bin/mpicc \
           -DMPIEXEC_EXECUTABLE=/usr/lib64/openmpi/bin/mpirun
