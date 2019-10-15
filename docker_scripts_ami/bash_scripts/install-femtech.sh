@@ -1,6 +1,7 @@
 cd /home/$UNAMEX
 yum install -y blas lapack blas-devel lapack-devel
-git clone -b develop https://github.com/PSUCompBio/FemTech
+git clone https://github.com/PSUCompBio/FemTech
+#git clone -b develop https://github.com/PSUCompBio/FemTech
 cd FemTech
 mkdir build
 cd build
