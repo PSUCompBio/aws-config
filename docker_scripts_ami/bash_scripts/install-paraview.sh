@@ -1,6 +1,12 @@
 cd /home/$UNAMEX
 #git clone https://gitlab.kitware.com/paraview/paraview.git
-wget -O ParaView-5.7.0-RC4-osmesa-MPI-Linux-Python3.7-64bit.tar.gz "https://www.paraview.org/paraview-downloads/download.php?submit=Download&version=v5.7&type=binary&os=Linux&downloadFile=ParaView-5.7.0-RC4-osmesa-MPI-Linux-Python3.7-64bit.tar.gz"
+#wget -O ParaView-5.7.0-RC4-osmesa-MPI-Linux-Python3.7-64bit.tar.gz "https://www.paraview.org/paraview-downloads/download.php?submit=Download&version=v5.7&type=binary&os=Linux&downloadFile=ParaView-5.7.0-RC4-osmesa-MPI-Linux-Python3.7-64bit.tar.gz"
+#
+# below  file ID is stored on PSU comp bio google drive
+export fileid=1J3VM9sIwSWn95kl2L8mlNpPHyGd9Js28
+export filename=ParaView-5.7.0-RC4-osmesa-MPI-Linux-Python3.7-64bit.tar.gz
+wget --save-cookies cookies.txt 'https://docs.google.com/uc?export=download&id='$fileid -O-  | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1/p' > confirm.txt
+wget --load-cookies cookies.txt -O $filename 'https://docs.google.com/uc?export=download&id='$fileid'&confirm='$(<confirm.txt)
 gunzip ParaView-5.7.0-RC4-osmesa-MPI-Linux-Python3.7-64bit.tar.gz
 tar -xvf ParaView-5.7.0-RC4-osmesa-MPI-Linux-Python3.7-64bit.tar
 rm ParaView-5.7.0-RC4-osmesa-MPI-Linux-Python3.7-64bit.tar
