@@ -16,6 +16,7 @@ RUN yum install -y pkgconfig
 RUN yum install -y cmake cmake3
 RUN yum install -y make automake gcc gcc-c++ kernel-devel
 RUN yum install -y openmpi openmpi-devel
+RUN yum install -y aws-cli
 
 # Setup home environment
 RUN useradd ${UNAMEX}

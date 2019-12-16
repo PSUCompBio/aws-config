@@ -1,5 +1,5 @@
 cd /home/$UNAMEX
-git -b Amazon-AMI clone https://github.com/PSUCompBio/rbf-brain
+git clone -b rbfchanges https://github.com/PSUCompBio/rbf-brain
 git clone https://github.com/PSUCompBio/PyGeM
 cp /home/$UNAMEX/rbf-brain/__init__.py /home/$UNAMEX/PyGeM/pygem
 cp /home/$UNAMEX/rbf-brain/pass_check.sh /home/$UNAMEX/PyGeM
