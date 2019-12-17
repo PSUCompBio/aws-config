@@ -15,6 +15,8 @@ python3  RBF_coarse.py
 
 # make elemental centroid lookup table, needs to be stored per person.
 pvpython lookuptablegenerator_coarse.py
+
+/bin/bash pass_check.sh
 #
 #cp /home/$UNAMEX/rbf-brain/RBFfinal.ipynb /home/$UNAMEX/PyGeM/tutorials/
 #cp /home/$UNAMEX/rbf-brain/RBFfinal.py /home/$UNAMEX/PyGeM/tutorials/

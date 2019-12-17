@@ -19,7 +19,7 @@ echo "#LD_LIBRARY_PATH written from install-paraview.sh" >> /home/$UNAMEX/.bash_
 echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/home/$UNAMEX/Paraview-5.7.0/lib" >> /home/$UNAMEX/.bash_profile
 #PATH=$PATH:/home/$UNAMEX/Paraview-5.7.0/bin
 echo "#PATH written from install-paraview.sh" >> /home/$UNAMEX/.bash_profile
-echo "PATH=\$PATH:/home/$UNAMEX/Paraview-5.7.0/bin" >> /home/$UNAMEX/.bash_profile
+echo "export PATH=\$PATH:/home/$UNAMEX/Paraview-5.7.0/bin" >> /home/$UNAMEX/.bash_profile
 echo " " >> /home/$UNAMEX/.bash_profile
 source /home/$UNAMEX/.bash_profile
 #cmake ../ -DCMAKE_BUILD_TYPE=Release -DPARAVIEW_ENABLE_PYTHON=ON -DVTK_USE_X=OFF -DVTK_OPENGL_HAS_OSMESA=ON -DPARAVIEW_BUILD_QT_GUI=OFF -DCMAKE_CXX_FLAGS="-lglut -lGLU"

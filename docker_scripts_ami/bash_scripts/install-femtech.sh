@@ -11,7 +11,7 @@ cmake3 .. -DEXAMPLES=ON -DEXAMPLE5=ON -DEXAMPLE9=ON \
           -DMPIEXEC_EXECUTABLE=/usr/lib64/openmpi/bin/mpirun
 make -j $NCPUS_VAR
 echo "#PATH written from install_femtech.sh" >> /home/$UNAMEX/.bash_profile
-echo "PATH=\$PATH:/usr/lib64/openmpi/bin" >> /home/$UNAMEX/.bash_profile
+echo "export PATH=\$PATH:/usr/lib64/openmpi/bin" >> /home/$UNAMEX/.bash_profile
 echo " " >> /home/$UNAMEX/.bash_profile
 source /home/$UNAMEX/.bash_profile
 cd examples/ex9
