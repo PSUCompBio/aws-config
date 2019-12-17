@@ -17,6 +17,9 @@ python3 setup.py install
 #/home/$UNAMEX/$CONDAVAR/bin/pip install --upgrade pip
 #/home/$UNAMEX/$CONDAVAR/bin/pip install runipy
 #pip3 install runipy
+cd /home/$UNAMEX/PyGeM/tutorials
+python3 RBFfinal.py 
+cd /home/$UNAMEX/PyGeM
 /bin/bash pass_check.sh
 cd /home/$UNAMEX
 echo " -------------------------------------------------------------------"
