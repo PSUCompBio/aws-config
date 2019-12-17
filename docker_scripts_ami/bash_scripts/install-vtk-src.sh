@@ -43,7 +43,7 @@ cd /home/$UNAMEX
 echo "#VTK_ROOT written from inital-vtk-src.sh" >> /home/$UNAMEX/.bash_profile
 echo "VTK_ROOT=/home/$UNAMEX/vtk-v7.1.0" >> /home/$UNAMEX/.bash_profile
 echo "#LD_LIBRARY_PATH written from inital-vtk-src.sh" >> /home/$UNAMEX/.bash_profile
-echo "LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:\$VTK_ROOT/build/bin:\$VTK_ROOT/build/lib" >> /home/$UNAMEX/.bash_profile
+echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:\$VTK_ROOT/build/bin:\$VTK_ROOT/build/lib" >> /home/$UNAMEX/.bash_profile
 echo " " >> /home/$UNAMEX/.bash_profile
 source /home/$UNAMEX/.bash_profile
 echo " -------------------------------------------------------------------"

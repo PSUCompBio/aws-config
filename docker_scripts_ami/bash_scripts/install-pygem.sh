@@ -1,8 +1,5 @@
 cd /home/$UNAMEX
-git clone -b rbfchanges https://github.com/PSUCompBio/rbf-brain
 git clone https://github.com/PSUCompBio/PyGeM
-cp /home/$UNAMEX/rbf-brain/__init__.py /home/$UNAMEX/PyGeM/pygem
-cp /home/$UNAMEX/rbf-brain/pass_check.sh /home/$UNAMEX/PyGeM
 cd /home/$UNAMEX/PyGeM
 #source /home/$UNAMEX/.bashrc
 #/home/$UNAMEX/$CONDAVAR/bin/python2 setup.py install

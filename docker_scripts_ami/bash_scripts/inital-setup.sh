@@ -17,7 +17,7 @@ echo "alias vi='vim' " >> /home/$UNAMEX/.bash_profile
 echo "alias python='python3' " >> /home/$UNAMEX/.bash_profile
 echo " " >> /home/$UNAMEX/.bash_profile
 echo "#LD_LIBRARY_PATH written from inital_setup.sh" >> /home/$UNAMEX/.bash_profile
-echo "LD_LIBRARY_PATH=/lib:/lib64:/usr/local/lib" >> /home/$UNAMEX/.bash_profile
+echo "export LD_LIBRARY_PATH=/lib:/lib64:/usr/local/lib" >> /home/$UNAMEX/.bash_profile
 echo " " >> /home/$UNAMEX/.bash_profile
 source /home/$UNAMEX/.bash_profile
 echo " -------------------------------------------------------------------"

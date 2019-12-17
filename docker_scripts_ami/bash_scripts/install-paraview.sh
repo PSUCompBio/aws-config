@@ -16,7 +16,7 @@ mv ParaView-5.7.0-RC4-osmesa-MPI-Linux-Python3.7-64bit Paraview-5.7.0
 #mkdir build
 #cd build
 echo "#LD_LIBRARY_PATH written from install-paraview.sh" >> /home/$UNAMEX/.bash_profile
-echo "LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/home/$UNAMEX/Paraview-5.7.0/lib" >> /home/$UNAMEX/.bash_profile
+echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/home/$UNAMEX/Paraview-5.7.0/lib" >> /home/$UNAMEX/.bash_profile
 #PATH=$PATH:/home/$UNAMEX/Paraview-5.7.0/bin
 echo "#PATH written from install-paraview.sh" >> /home/$UNAMEX/.bash_profile
 echo "PATH=\$PATH:/home/$UNAMEX/Paraview-5.7.0/bin" >> /home/$UNAMEX/.bash_profile

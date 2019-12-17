@@ -18,7 +18,7 @@ echo "PATH=\$PATH:/usr/local/bin" >> /home/$UNAMEX/.bash_profile
 # back on.
 #echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib" >> /home/$UNAMEX/.bash_profile
 echo "#LD_LIBRARY_PATH written from install_oce.sh" >> /home/$UNAMEX/.bash_profile
-echo "LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/usr/local/lib:/home/$UNAMEX/oce/build/Unix/x86_64-Release-64" >> /home/$UNAMEX/.bash_profile
+echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/usr/local/lib:/home/$UNAMEX/oce/build/Unix/x86_64-Release-64" >> /home/$UNAMEX/.bash_profile
 echo " " >> /home/$UNAMEX/.bash_profile
 source /home/$UNAMEX/.bash_profile
 echo " -------------------------------------------------------------------"
