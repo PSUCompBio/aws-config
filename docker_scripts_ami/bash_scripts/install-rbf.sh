@@ -1,10 +1,27 @@
-cp /home/$UNAMEX/rbf-brain/RBFfinal.ipynb /home/$UNAMEX/PyGeM/tutorials/
-cp /home/$UNAMEX/rbf-brain/RBFfinal.py /home/$UNAMEX/PyGeM/tutorials/
-cp /home/$UNAMEX/rbf-brain/Merged.vtk /home/$UNAMEX/PyGeM/tests/test_datasets/
-cp /home/$UNAMEX/rbf-brain/parameters_rbf_custom.prm /home/$UNAMEX/PyGeM/tests/test_datasets/
-cd /home/$UNAMEX/PyGeM/tutorials
-source /home/$UNAMEX/.bash_profile
-python3 RBFfinal.py
+cd /home/$UNAMEX
+cd rbf-brain
+# # makes a stl
+pvpython extract.py
+
+# # makes a parameters fle
+pvpython controlpoints.py
+
+# # to genterate VTK file that is the morphed mesh
+python3  RBF_coarse.py
+
+# # convert to abaqus
+~/MergePolyData/build/MergePolyData -in coarse_mesh_morphed.vtk -out coarse_mesh_morphed.inp -abaqus
+
+# make elemental centroid lookup table, needs to be stored per person.
+pvpython lookuptablegenerator_coarse.py
+#
+#cp /home/$UNAMEX/rbf-brain/RBFfinal.ipynb /home/$UNAMEX/PyGeM/tutorials/
+#cp /home/$UNAMEX/rbf-brain/RBFfinal.py /home/$UNAMEX/PyGeM/tutorials/
+#cp /home/$UNAMEX/rbf-brain/Merged.vtk /home/$UNAMEX/PyGeM/tests/test_datasets/
+#cp /home/$UNAMEX/rbf-brain/parameters_rbf_custom.prm /home/$UNAMEX/PyGeM/tests/test_datasets/
+#cd /home/$UNAMEX/PyGeM/tutorials
+#source /home/$UNAMEX/.bash_profile
+#python3 RBFfinal.py
 echo " -------------------------------------------------------------------"
 echo " ----------               Complete RBF Setup                  ------"
 echo " -------------------------------------------------------------------"
