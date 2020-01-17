@@ -35,7 +35,7 @@ COPY bash_scripts/bashrc /home/${UNAMEX}/.bashrc
 COPY bash_scripts/bash_profile /home/${UNAMEX}/.bash_profile
 COPY TestingProcedures.md /home/${UNAMEX}
 
-#RUN /bin/bash bash_scripts/inital-setup.sh
+RUN /bin/bash bash_scripts/inital-setup.sh
 #RUN /bin/bash bash_scripts/install-swig.sh
 #RUN /bin/bash bash_scripts/install-tcl.sh
 #RUN /bin/bash bash_scripts/install-paraview.sh
@@ -56,10 +56,6 @@ RUN /bin/bash bash_scripts/install-simple-nodejs-app.sh
 ### this is provided my MergePolyData-ImageWrite RUN /bin/bash bash_scripts/install-projectedtexture.sh
 ### don't need this.... RUN /bin/bash bash_scripts/install-qt5.sh
 ### vtk now provided by paraview .... do not need. RUN /bin/bash bash_scripts/install-pip-vtk.sh
-
-
-# Run index.js when the container launches
-CMD ["node", "index.js"]
 
 # clean up and setup
 RUN /bin/bash -c "source .bashrc"
