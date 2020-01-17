@@ -17,6 +17,7 @@ RUN yum install -y cmake cmake3
 RUN yum install -y make automake gcc gcc-c++ kernel-devel
 RUN yum install -y openmpi openmpi-devel
 RUN yum install -y aws-cli
+RUN yum install -y yarn nodejs12
 
 # Setup home environment
 RUN useradd ${UNAMEX}
@@ -34,27 +35,31 @@ COPY bash_scripts/bashrc /home/${UNAMEX}/.bashrc
 COPY bash_scripts/bash_profile /home/${UNAMEX}/.bash_profile
 COPY TestingProcedures.md /home/${UNAMEX}
 
-RUN /bin/bash bash_scripts/inital-setup.sh
-RUN /bin/bash bash_scripts/install-swig.sh
-RUN /bin/bash bash_scripts/install-tcl.sh
-RUN /bin/bash bash_scripts/install-paraview.sh
-RUN /bin/bash bash_scripts/install-paraview-image-write.sh
-RUN /bin/bash bash_scripts/install-python-image-write.sh
-RUN /bin/bash bash_scripts/install-google-drive.sh
-RUN /bin/bash bash_scripts/install-oce.sh
-RUN /bin/bash bash_scripts/install-occ.sh
-RUN /bin/bash bash_scripts/install-pygem.sh
-RUN /bin/bash bash_scripts/install-rbf.sh
-RUN /bin/bash bash_scripts/install-vtk-src.sh
-RUN /bin/bash bash_scripts/install-MergePolyData.sh
-RUN /bin/bash bash_scripts/install-femtech.sh
-RUN /bin/bash bash_scripts/install-complete.sh
+#RUN /bin/bash bash_scripts/inital-setup.sh
+#RUN /bin/bash bash_scripts/install-swig.sh
+#RUN /bin/bash bash_scripts/install-tcl.sh
+#RUN /bin/bash bash_scripts/install-paraview.sh
+#RUN /bin/bash bash_scripts/install-paraview-image-write.sh
+#RUN /bin/bash bash_scripts/install-python-image-write.sh
+#RUN /bin/bash bash_scripts/install-google-drive.sh
+#RUN /bin/bash bash_scripts/install-oce.sh
+#RUN /bin/bash bash_scripts/install-occ.sh
+#RUN /bin/bash bash_scripts/install-pygem.sh
+#RUN /bin/bash bash_scripts/install-rbf.sh
+#RUN /bin/bash bash_scripts/install-vtk-src.sh
+#RUN /bin/bash bash_scripts/install-MergePolyData.sh
+#RUN /bin/bash bash_scripts/install-femtech.sh
+#RUN /bin/bash bash_scripts/install-complete.sh
+RUN /bin/bash bash_scripts/install-simple-nodejs-app.sh
 
 ##RUN /bin/bash bash_scripts/install-mesa-vtk.sh
 ### this is provided my MergePolyData-ImageWrite RUN /bin/bash bash_scripts/install-projectedtexture.sh
 ### don't need this.... RUN /bin/bash bash_scripts/install-qt5.sh
 ### vtk now provided by paraview .... do not need. RUN /bin/bash bash_scripts/install-pip-vtk.sh
 
+
+# Run index.js when the container launches
+CMD ["node", "index.js"]
 
 # clean up and setup
 RUN /bin/bash -c "source .bashrc"
