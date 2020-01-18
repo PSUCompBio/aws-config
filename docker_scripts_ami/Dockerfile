@@ -18,6 +18,9 @@ RUN yum install -y make automake gcc gcc-c++ kernel-devel
 RUN yum install -y openmpi openmpi-devel
 RUN yum install -y aws-cli
 
+# expose port 4000 for simple_nodejs_app
+EXPOSE PORT 4000
+
 # Setup home environment
 RUN useradd ${UNAMEX}
 ARG VTK_ROOT=/home/${UNAMEX}/VTK
