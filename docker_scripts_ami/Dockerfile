@@ -65,4 +65,4 @@ EXPOSE 4000
 
 # set up a script that run whenever the docker is started.
 # it will run the forever service to start the simple-nodejs-app
-CMD /bash_scripts/start-nodejs.sh
+CMD /home/${UNAMEX}/bash_scripts/start-nodejs.sh
