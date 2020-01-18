@@ -8,6 +8,7 @@ curl -sL https://rpm.nodesource.com/setup_12.x |  bash -
 yum -y install yarn
 yum -y install nodejs
 # Install forever
+npm install express -g 
 npm install forever -g
 # when we build the docker we don't want to actually
 # run the forever start command. If we did this
