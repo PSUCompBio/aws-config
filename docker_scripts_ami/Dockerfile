@@ -62,6 +62,7 @@ EXPOSE 4000
 # set up a script that run whenever the docker is started.
 # it will run the forever service to start the simple-nodejs-app
 #ENTRYPOINT ["/home/ec2-user/bash_scripts/start-nodejs.sh”]
+ENTRYPOINT ["/bin/bash", "-c", "/home/ec2-user/bash_scripts/start-nodejs.sh"]
 
 # clean up and setup
 RUN /bin/bash -c "source .bashrc"
