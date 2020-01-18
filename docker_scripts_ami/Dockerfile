@@ -18,9 +18,6 @@ RUN yum install -y make automake gcc gcc-c++ kernel-devel
 RUN yum install -y openmpi openmpi-devel
 RUN yum install -y aws-cli
 
-# expose port 4000 for simple_nodejs_app
-EXPOSE 4000
-
 # Setup home environment
 RUN useradd ${UNAMEX}
 ARG VTK_ROOT=/home/${UNAMEX}/VTK
@@ -62,3 +59,10 @@ RUN /bin/bash bash_scripts/install-simple-nodejs-app.sh
 # clean up and setup
 RUN /bin/bash -c "source .bashrc"
 RUN chown -R ${UNAMEX} /home/${UNAMEX}
+
+# expose port 4000 for simple_nodejs_app
+EXPOSE 4000
+
+# set up a script that run whenever the docker is started.
+# it will run the forever service to start the simple-nodejs-app
+CMD /bash_scripts/start-nodejs.sh
