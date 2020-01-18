@@ -63,7 +63,8 @@ EXPOSE 4000
 # it will run the forever service to start the simple-nodejs-app
 RUN ["chmod", "+x", "/home/ec2-user/bash_scripts/start-nodejs.sh"]
 #ENTRYPOINT ["/bin/bash", "-c", "/home/ec2-user/bash_scripts/start-nodejs.sh"]
-CMD ["/bin/bash", "-c", "/home/ec2-user/bash_scripts/start-nodejs.sh"]
+#CMD ["/bin/bash", "-c", "/home/ec2-user/bash_scripts/start-nodejs.sh"]
+RUN /bin/bash bash_scripts/start-nodejs.sh
 
 # clean up and setup
 RUN /bin/bash -c "source .bashrc"
