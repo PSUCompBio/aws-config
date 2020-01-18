@@ -19,7 +19,7 @@ RUN yum install -y openmpi openmpi-devel
 RUN yum install -y aws-cli
 
 # expose port 4000 for simple_nodejs_app
-EXPOSE PORT 4000
+EXPOSE 4000
 
 # Setup home environment
 RUN useradd ${UNAMEX}
