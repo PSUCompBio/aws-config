@@ -56,13 +56,17 @@ RUN /bin/bash bash_scripts/install-simple-nodejs-app.sh
 ### don't need this.... RUN /bin/bash bash_scripts/install-qt5.sh
 ### vtk now provided by paraview .... do not need. RUN /bin/bash bash_scripts/install-pip-vtk.sh
 
-# clean up and setup
-RUN /bin/bash -c "source .bashrc"
-RUN chown -R ${UNAMEX} /home/${UNAMEX}
-
 # expose port 4000 for simple_nodejs_app
 EXPOSE 4000
 
 # set up a script that run whenever the docker is started.
 # it will run the forever service to start the simple-nodejs-app
-ENTRYPOINT bash_scripts/start-nodejs.sh
+
+ENV ENTRYPOINT_TEST_SCRIPTS_HOME=/home/${UNAMEX}/bash_scripts
+ENTRYPOINT_TEST_DEFAULT_SCRIPT=start-nodejs.sh
+ENV PATH=$ENTRYPOINT_TEST_SCRIPTS_HOME:$PATH
+ENTRYPOINT ["/bin/echo", “Hello”]
+
+# clean up and setup
+RUN /bin/bash -c "source .bashrc"
+RUN chown -R ${UNAMEX} /home/${UNAMEX}
