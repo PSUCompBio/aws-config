@@ -1,7 +1,8 @@
 source /home/$UNAMEX/.bash_profile
 cd /home/$UNAMEX
 echo $VTK_ROOT
-git clone -b Amazon-AMI https://github.com/PSUCompBio/MergePolyData
+#git clone -b Amazon-AMI https://github.com/PSUCompBio/MergePolyData
+git clone https://github.com/PSUCompBio/MergePolyData
 cd MergePolyData
 mkdir build
 cd build
