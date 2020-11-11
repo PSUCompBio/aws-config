@@ -12,6 +12,7 @@ RUN yum install -y git
 RUN yum install -y python3 python3-devel
 RUN yum install -y curl
 RUN yum install -y vim
+sudo yum install -y tar
 RUN yum install -y pkgconfig
 RUN yum install -y cmake cmake3
 RUN yum install -y make automake gcc gcc-c++ kernel-devel
@@ -50,7 +51,6 @@ RUN /bin/bash bash_scripts/install-rbf.sh
 ##RUN /bin/bash bash_scripts/install-femtech.sh
 RUN /bin/bash bash_scripts/install-complete.sh
 RUN /bin/bash bash_scripts/install-simple-nodejs-app.sh
-
 ##RUN /bin/bash bash_scripts/install-mesa-vtk.sh
 ### this is provided my MergePolyData-ImageWrite RUN /bin/bash bash_scripts/install-projectedtexture.sh
 ### don't need this.... RUN /bin/bash bash_scripts/install-qt5.sh
