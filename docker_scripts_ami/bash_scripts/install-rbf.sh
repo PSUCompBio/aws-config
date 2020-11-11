@@ -1,5 +1,6 @@
 cd /home/$UNAMEX
-git clone -b rbfchanges https://github.com/PSUCompBio/rbf-brain
+#git clone -b rbfchanges https://github.com/PSUCompBio/rbf-brain
+git clone  https://github.com/PSUCompBio/rbf-brain
 cd rbf-brain
 # # makes a stl
 pvpython extract.py
