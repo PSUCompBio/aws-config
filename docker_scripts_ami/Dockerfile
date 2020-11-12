@@ -13,6 +13,7 @@ RUN yum install -y python3 python3-devel
 RUN yum install -y curl
 RUN yum install -y vim
 RUN yum install -y tar
+RUN yum install -y bzip2
 RUN yum install -y pkgconfig
 RUN yum install -y cmake cmake3
 RUN yum install -y make automake gcc gcc-c++ kernel-devel
