@@ -1,3 +1,4 @@
+source /home/$UNAMEX/.bash_profile
 cd /home/$UNAMEX
 #git clone -b rbfchanges https://github.com/PSUCompBio/rbf-brain
 git clone  https://github.com/PSUCompBio/rbf-brain

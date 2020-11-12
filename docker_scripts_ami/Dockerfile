@@ -50,14 +50,14 @@ RUN /bin/bash bash_scripts/install-MergePolyData.sh
 RUN /bin/bash bash_scripts/install-rbf.sh
 ##RUN /bin/bash bash_scripts/install-femtech.sh
 RUN /bin/bash bash_scripts/install-complete.sh
-RUN /bin/bash bash_scripts/install-simple-nodejs-app.sh
+#RUN /bin/bash bash_scripts/install-simple-nodejs-app.sh
 RUN /bin/bash bash_scripts/install-nsfcareer-api-service.sh
 ##RUN /bin/bash bash_scripts/install-mesa-vtk.sh
 ### this is provided my MergePolyData-ImageWrite RUN /bin/bash bash_scripts/install-projectedtexture.sh
 ### don't need this.... RUN /bin/bash bash_scripts/install-qt5.sh
 ### vtk now provided by paraview .... do not need. RUN /bin/bash bash_scripts/install-pip-vtk.sh
 
-# expose port 4000 for simple_nodejs_app
+# expose port 4000 for nsfcareer-api-service
 EXPOSE 4000
 
 # set up a script that run whenever the docker is started.

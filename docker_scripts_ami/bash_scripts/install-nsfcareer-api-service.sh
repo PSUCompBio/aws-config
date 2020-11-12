@@ -1,7 +1,7 @@
 cd /home/$UNAMEX
 git clone https://github.com/PSUCompBio/nsfcareer-api-service
 mkdir /var/www
-mv simple-nodejs-app /var/www/
+mv nsfcareer-api-service /var/www/
 cd /var/www/nsfcareer-api-service
 curl -sL https://dl.yarnpkg.com/rpm/yarn.repo | tee /etc/yum.repos.d/yarn.repo
 curl -sL https://rpm.nodesource.com/setup_12.x |  bash -
