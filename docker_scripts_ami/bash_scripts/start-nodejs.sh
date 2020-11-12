@@ -1,3 +1,3 @@
  #!/bin/sh
- forever -a --uid start /var/www/simple-nodejs-app/index.js
- echo 'Success running the startup script for simple-nodejs-app!
+ forever -a --uid start /var/www/nsfcareer-api-service/server.js
+ echo 'Success running the startup script for nsfcareer-api-service!

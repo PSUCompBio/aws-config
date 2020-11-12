@@ -51,6 +51,7 @@ RUN /bin/bash bash_scripts/install-rbf.sh
 ##RUN /bin/bash bash_scripts/install-femtech.sh
 RUN /bin/bash bash_scripts/install-complete.sh
 RUN /bin/bash bash_scripts/install-simple-nodejs-app.sh
+RUN /bin/bash bash_scripts/install-nsfcareer-api-service.sh
 ##RUN /bin/bash bash_scripts/install-mesa-vtk.sh
 ### this is provided my MergePolyData-ImageWrite RUN /bin/bash bash_scripts/install-projectedtexture.sh
 ### don't need this.... RUN /bin/bash bash_scripts/install-qt5.sh
@@ -60,7 +61,7 @@ RUN /bin/bash bash_scripts/install-simple-nodejs-app.sh
 EXPOSE 4000
 
 # set up a script that run whenever the docker is started.
-# it will run the forever service to start the simple-nodejs-app
+# it will run the forever service to start the nsfcareer-api-service
 RUN ["chmod", "+x", "/home/ec2-user/bash_scripts/start-nodejs.sh"]
 #ENTRYPOINT ["/bin/bash", "-c", "/home/ec2-user/bash_scripts/start-nodejs.sh"]
 #CMD ["/bin/bash", "-c", "/home/ec2-user/bash_scripts/start-nodejs.sh"]
