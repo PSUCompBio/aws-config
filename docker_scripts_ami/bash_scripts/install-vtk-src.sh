@@ -1,11 +1,12 @@
 cd /home/$UNAMEX
-git clone https://github.com/Kitware/VTK
+#git clone https://github.com/Kitware/VTK
 #wget https://gitlab.kitware.com/vtk/vtk/-/archive/v8.2.0/vtk-v8.2.0.tar.gz
 #wget https://gitlab.kitware.com/vtk/vtk/-/archive/v5.10.1/vtk-v5.10.1.tar.gz
 #wget https://gitlab.kitware.com/vtk/vtk/-/archive/v6.3.0/vtk-v6.3.0.tar.gz
 #wget https://gitlab.kitware.com/vtk/vtk/-/archive/v5.10.0/vtk-v5.10.0.tar.gz
 #wget https://gitlab.kitware.com/vtk/vtk/-/archive/v8.0.0/vtk-v8.0.0.tar.gz
-wget https://gitlab.kitware.com/vtk/vtk/-/archive/v7.1.0/vtk-v7.1.0.tar.gz
+#wget https://gitlab.kitware.com/vtk/vtk/-/archive/v7.1.0/vtk-v7.1.0.tar.gz
+wget --no-check-certificate --no-proxy https://vtk-nsfcareer.s3.amazonaws.com/vtk-v7.1.0.tar.gz
 gunzip vtk-v7.1.0.tar.gz
 tar -xvf vtk-v7.1.0.tar
 rm vtk-v7.1.0.tar
