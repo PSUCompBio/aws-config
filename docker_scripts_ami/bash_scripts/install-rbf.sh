@@ -3,19 +3,19 @@ cd /home/$UNAMEX
 git clone  https://github.com/PSUCompBio/rbf-brain
 cd rbf-brain
 # # makes a stl
-pvpython extract.py
+pvpython extract.py  --input model.ply --output model.stl
 
 # # makes a parameters fle
-pvpython controlpoints.py
+pvpython controlpoints.py --input model.stl --output parameters.prm
 
 # # to genterate VTK file that is the morphed mesh
-python3  RBF_coarse.py
+python3 RBF_coarse.py --p parameters.prm --m coarse_brain.vtk --output coarse_brain_morphed.vtk
 
 # # convert to abaqus
 ~/MergePolyData/build/MergePolyData -in coarse_mesh_morphed.vtk -out coarse_mesh_morphed.inp -abaqus
 
 # make elemental centroid lookup table, needs to be stored per person.
-pvpython lookuptablegenerator_coarse.py
+#pvpython lookuptablegenerator_coarse.py
 
 /bin/bash pass_check.sh
 #
