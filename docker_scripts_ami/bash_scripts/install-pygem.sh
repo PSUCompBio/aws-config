@@ -10,6 +10,7 @@ pip3 install cycler
 pip3 install python-dateutil
 pip3 install kiwisolver
 pip3 install wheel
+pip3 install requests in line
 PYTHONPATH=$(python3 -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")
 #mkdir /usr/local/lib/python3.7/
 #mkdir /usr/local/lib/python3.7/site-packages
@@ -18,7 +19,7 @@ python3 setup.py install
 #/home/$UNAMEX/$CONDAVAR/bin/pip install runipy
 #pip3 install runipy
 cd /home/$UNAMEX/PyGeM/tutorials
-python3 RBFfinal.py 
+python3 RBFfinal.py
 cd /home/$UNAMEX/PyGeM
 /bin/bash pass_check.sh
 cd /home/$UNAMEX
