@@ -10,7 +10,7 @@ pip3 install cycler
 pip3 install python-dateutil
 pip3 install kiwisolver
 pip3 install wheel
-pip3 install requests in line
+pip3 install requests
 PYTHONPATH=$(python3 -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")
 #mkdir /usr/local/lib/python3.7/
 #mkdir /usr/local/lib/python3.7/site-packages
