@@ -6,11 +6,14 @@ cd /home/$UNAMEX
 #wget https://gitlab.kitware.com/vtk/vtk/-/archive/v5.10.0/vtk-v5.10.0.tar.gz
 #wget https://gitlab.kitware.com/vtk/vtk/-/archive/v8.0.0/vtk-v8.0.0.tar.gz
 #wget https://gitlab.kitware.com/vtk/vtk/-/archive/v7.1.0/vtk-v7.1.0.tar.gz
-wget --no-check-certificate --no-proxy https://vtk-nsfcareer.s3.amazonaws.com/vtk-v7.1.0.tar.gz
-gunzip vtk-v7.1.0.tar.gz
-tar -xvf vtk-v7.1.0.tar
-rm vtk-v7.1.0.tar
-export VTK_ROOT=/home/$UNAMEX/vtk-v7.1.0
+#wget --no-check-certificate --no-proxy https://vtk-nsfcareer.s3.amazonaws.com/vtk-v7.1.0.tar.gz
+VTKVERSION=vtk-v4.4.2
+#VTKVERSION=vtk-v7.1.0
+wget --no-check-certificate --no-proxy https://vtk-nsfcareer.s3.amazonaws.com/$VTKVERSION.tar.gz
+gunzip $VTKVERSION.tar.gz
+tar -xvf $VTKVERSION.tar
+rm $VTKVERSION.tar
+export VTK_ROOT=/home/$UNAMEX/$VTKVERSION
 cd $VTK_ROOT
 mkdir build
 cd build
@@ -42,7 +45,7 @@ make -j $NCPUS_VAR
 make install
 cd /home/$UNAMEX
 echo "#VTK_ROOT written from inital-vtk-src.sh" >> /home/$UNAMEX/.bash_profile
-echo "VTK_ROOT=/home/$UNAMEX/vtk-v7.1.0" >> /home/$UNAMEX/.bash_profile
+echo "VTK_ROOT=/home/$UNAMEX/$VTKVERSION" >> /home/$UNAMEX/.bash_profile
 echo "#LD_LIBRARY_PATH written from inital-vtk-src.sh" >> /home/$UNAMEX/.bash_profile
 echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:\$VTK_ROOT/build/bin:\$VTK_ROOT/build/lib" >> /home/$UNAMEX/.bash_profile
 echo " " >> /home/$UNAMEX/.bash_profile
