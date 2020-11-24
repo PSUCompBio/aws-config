@@ -7,8 +7,9 @@ cd /home/$UNAMEX
 #wget https://gitlab.kitware.com/vtk/vtk/-/archive/v8.0.0/vtk-v8.0.0.tar.gz
 #wget https://gitlab.kitware.com/vtk/vtk/-/archive/v7.1.0/vtk-v7.1.0.tar.gz
 #wget --no-check-certificate --no-proxy https://vtk-nsfcareer.s3.amazonaws.com/vtk-v7.1.0.tar.gz
-VTKVERSION=vtk-v4.4.2
-#VTKVERSION=vtk-v7.1.0
+#wget --no-check-certificate --no-proxy https://vtk-nsfcareer.s3.amazonaws.com/vtk-v4.4.2.tar.gz
+#VTKVERSION=vtk-v4.4.2
+VTKVERSION=vtk-v7.1.0
 wget --no-check-certificate --no-proxy https://vtk-nsfcareer.s3.amazonaws.com/$VTKVERSION.tar.gz
 gunzip $VTKVERSION.tar.gz
 tar -xvf $VTKVERSION.tar

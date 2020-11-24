@@ -1,6 +1,6 @@
- #!/bin/sh
-cd /home/$UNAMEX
-source /home/$UNAMEX/.bash_profile
+ #!/bin/bash
+cd /home/ec2-user
+source /home/ec2-user/.bash_profile
 ##
 ## npm will automatically pick up the server.js file in
 ## nsfcareer-api-service

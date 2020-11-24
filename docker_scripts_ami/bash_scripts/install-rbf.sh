@@ -12,14 +12,17 @@ pvpython controlpoints.py --input model.stl --output parameters.prm
 # # to genterate VTK file that is the morphed mesh
 python3 RBF_coarse.py --p parameters.prm --m coarse_brain.vtk --output coarse_brain_morphed.vtk
 
-# # convert to abaqus
+# # convert to abaqus version 1
 ~/MergePolyData/build/MergePolyData -in coarse_mesh_morphed.vtk -out coarse_mesh_morphed.inp -abaqus
+
+# # convert to abaqus version 2
+~/MergePolyData/build/InpFromVTK -in coarse_mesh_morphed.vtk -out coarse_mesh_morphed-v2.inp -abaqus
 
 # make elemental centroid lookup table, needs to be stored per person.
 #pvpython lookuptablegenerator_coarse.py
 
 # # For the brain that we download from the website
-#pvpython meshrotate.py --input coarse_brain_morphed.vtk --output coarse_brain_morphed_rotated.vtk
+pvpython meshrotate.py --input coarse_brain_morphed.vtk --output coarse_brain_morphed_rotated.vtk
 
 # # for creating skull and brain surface files for displaying on the website
 #pvpython extract_surface.py --input coarse_brain_morphed_rotated.vtk --outputskull skull.ply --outputbrain brain.ply
