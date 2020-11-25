@@ -25,13 +25,15 @@ tar -xvf zlib-1.2.9.tar
 cd zlib-1.2.9
 ./configure
 make
+cd /lib64/
+ln -s -f /usr/local/lib/libz.so.1.2.9 libz.so.1
 #export LD_LIBRARY_PATH=/home/ec2-user/zlib-1.2.9:$LD_LIBRARY_PATH
 #cd paraview
 #git submodule update --init --recursive
 #mkdir build
 #cd build
 echo "#LD_LIBRARY_PATH written from install-paraview.sh" >> /home/$UNAMEX/.bash_profile
-echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/home/$UNAMEX/zlib-1.2.9:/home/$UNAMEX/$PARAVIEW_VERSION/lib" >> /home/$UNAMEX/.bash_profile
+echo "export LD_LIBRARY_PATH=/home/$UNAMEX/zlib-1.2.9:/home/$UNAMEX/$PARAVIEW_VERSION/lib:\$LD_LIBRARY_PATH" >> /home/$UNAMEX/.bash_profile
 #PATH=$PATH:/home/$UNAMEX/Paraview-5.7.0/bin
 echo "#PATH written from install-paraview.sh" >> /home/$UNAMEX/.bash_profile
 echo "export PATH=\$PATH:/home/$UNAMEX/$PARAVIEW_VERSION/bin" >> /home/$UNAMEX/.bash_profile
