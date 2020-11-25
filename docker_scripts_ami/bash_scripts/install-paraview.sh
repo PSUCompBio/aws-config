@@ -15,12 +15,23 @@ gunzip $PARAVIEW_VERSION.tar.gz
 tar -xvf $PARAVIEW_VERSION.tar
 rm $PARAVIEW_VERSION.tar
 #mv $PARAVIEW_VERSION Paraview
+#---------------------------------------------------
+#------------------install zlib ---------------------
+#----------------------------------------------------
+cd /home/$UNAMEX
+wget --no-check-certificate --no-proxy https://paraview-nsfcareer.s3.amazonaws.com/zlib-1.2.9.tar.gz
+gunzip zlib-1.2.9.tar.gz
+tar -xvf zlib-1.2.9.tar
+cd zlib-1.2.9
+./configure
+make
+#export LD_LIBRARY_PATH=/home/ec2-user/zlib-1.2.9:$LD_LIBRARY_PATH
 #cd paraview
 #git submodule update --init --recursive
 #mkdir build
 #cd build
 echo "#LD_LIBRARY_PATH written from install-paraview.sh" >> /home/$UNAMEX/.bash_profile
-echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/home/$UNAMEX/$PARAVIEW_VERSION/lib" >> /home/$UNAMEX/.bash_profile
+echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/home/$UNAMEX/$PARAVIEW_VERSION/lib:/home/$UNAMEX/zlib-1.2.9" >> /home/$UNAMEX/.bash_profile
 #PATH=$PATH:/home/$UNAMEX/Paraview-5.7.0/bin
 echo "#PATH written from install-paraview.sh" >> /home/$UNAMEX/.bash_profile
 echo "export PATH=\$PATH:/home/$UNAMEX/$PARAVIEW_VERSION/bin" >> /home/$UNAMEX/.bash_profile
