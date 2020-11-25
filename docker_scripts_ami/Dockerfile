@@ -39,18 +39,18 @@ COPY TestingProcedures.md /home/${UNAMEX}
 RUN /bin/bash bash_scripts/inital-setup.sh
 RUN /bin/bash bash_scripts/install-swig.sh
 RUN /bin/bash bash_scripts/install-tcl.sh
-RUN /bin/bash bash_scripts/install-paraview.sh
-RUN /bin/bash bash_scripts/install-paraview-image-write.sh
-RUN /bin/bash bash_scripts/install-python-image-write.sh
-RUN /bin/bash bash_scripts/install-oce.sh
-RUN /bin/bash bash_scripts/install-occ.sh
-RUN /bin/bash bash_scripts/install-pygem.sh
-RUN /bin/bash bash_scripts/install-vtk-src.sh
-RUN /bin/bash bash_scripts/install-MergePolyData.sh
-RUN /bin/bash bash_scripts/install-rbf.sh
-RUN /bin/bash bash_scripts/install-complete.sh
-#RUN /bin/bash bash_scripts/install-simple-nodejs-app.sh
-RUN /bin/bash bash_scripts/install-nsfcareer-api-service.sh
+#RUN /bin/bash bash_scripts/install-paraview.sh
+#RUN /bin/bash bash_scripts/install-paraview-image-write.sh
+#RUN /bin/bash bash_scripts/install-python-image-write.sh
+#RUN /bin/bash bash_scripts/install-oce.sh
+#RUN /bin/bash bash_scripts/install-occ.sh
+#RUN /bin/bash bash_scripts/install-pygem.sh
+#RUN /bin/bash bash_scripts/install-vtk-src.sh
+#RUN /bin/bash bash_scripts/install-MergePolyData.sh
+#RUN /bin/bash bash_scripts/install-rbf.sh
+#RUN /bin/bash bash_scripts/install-complete.sh
+# #RUN /bin/bash bash_scripts/install-simple-nodejs-app.sh
+#RUN /bin/bash bash_scripts/install-nsfcareer-api-service.sh
 
 ##RUN /bin/bash bash_scripts/install-femtech.sh
 # RUN /bin/bash bash_scripts/install-google-drive.sh
