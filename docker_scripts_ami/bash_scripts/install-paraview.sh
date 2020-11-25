@@ -24,7 +24,7 @@ gunzip zlib-1.2.9.tar.gz
 tar -xvf zlib-1.2.9.tar
 cd zlib-1.2.9
 ./configure
-make
+make install
 cd /lib64/
 ln -s -f /usr/local/lib/libz.so.1.2.9 libz.so.1
 #export LD_LIBRARY_PATH=/home/ec2-user/zlib-1.2.9:$LD_LIBRARY_PATH
