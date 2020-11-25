@@ -33,7 +33,7 @@ make
 #mkdir build
 #cd build
 echo "#LD_LIBRARY_PATH written from install-paraview.sh" >> /home/$UNAMEX/.bash_profile
-echo "export LD_LIBRARY_PATH=/home/$UNAMEX/zlib-1.2.9:/home/$UNAMEX/$PARAVIEW_VERSION/lib:\$LD_LIBRARY_PATH" >> /home/$UNAMEX/.bash_profile
+echo "export LD_LIBRARY_PATH=/home/$UNAMEX/zlib-1.2.9:\$LD_LIBRARY_PATH" >> /home/$UNAMEX/.bash_profile
 #echo "export LD_LIBRARY_PATH=/usr/local/lib:/home/$UNAMEX/zlib-1.2.9:/home/$UNAMEX/$PARAVIEW_VERSION/lib:\$LD_LIBRARY_PATH" >> /home/$UNAMEX/.bash_profile
 #PATH=$PATH:/home/$UNAMEX/Paraview-5.7.0/bin
 echo "#PATH written from install-paraview.sh" >> /home/$UNAMEX/.bash_profile
