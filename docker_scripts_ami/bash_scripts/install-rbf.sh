@@ -16,15 +16,15 @@ python3 RBF_coarse.py --p parameters.prm --m coarse_brain.vtk --output coarse_br
 # this adds meshio library to python3 that converts the legacy
 # vtu file to XML based vtu file.
 pip3 install meshio
-meshio-convert coarse_brain_morphed.vtk converted_output.vtu
-meshio-ascii converted_output.vtu
+meshio-convert coarse_brain_morphed.vtk converted_vtk.vtu
+meshio-ascii converted_vtk.vtu
 
 ## OLD  - uses legacy vtk format  (not XML)
 # # convert to abaqus version 1
 #~/MergePolyData/build/MergePolyData -in coarse_mesh_morphed.vtk -out coarse_mesh_morphed.inp -abaqus
 
 # # convert to abaqus version 2
-~/MergePolyData/build/InpFromVTK -in converted_output.vtk -out coarse_mesh_morphed-v2.inp -abaqus
+~/MergePolyData/build/InpFromVTK -in converted_vtk.vtu -out coarse_mesh_morphed-v2.inp -abaqus
 
 # make elemental centroid lookup table, needs to be stored per person.
 #pvpython lookuptablegenerator_coarse.py
