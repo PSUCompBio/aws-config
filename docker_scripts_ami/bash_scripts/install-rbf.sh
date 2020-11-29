@@ -12,11 +12,19 @@ pvpython controlpoints.py --input model.stl --output parameters.prm
 # # to genterate VTK file that is the morphed mesh
 python3 RBF_coarse.py --p parameters.prm --m coarse_brain.vtk --output coarse_brain_morphed.vtk
 
+
+# this adds meshio library to python3 that converts the legacy
+# vtu file to XML based vtu file.
+pip3 install meshio
+meshio-convert coarse_brain_morphed.vtk converted_output.vtu
+meshio-ascii converted_output.vtu
+
+## OLD  - uses legacy vtk format  (not XML)
 # # convert to abaqus version 1
-~/MergePolyData/build/MergePolyData -in coarse_mesh_morphed.vtk -out coarse_mesh_morphed.inp -abaqus
+#~/MergePolyData/build/MergePolyData -in coarse_mesh_morphed.vtk -out coarse_mesh_morphed.inp -abaqus
 
 # # convert to abaqus version 2
-~/MergePolyData/build/InpFromVTK -in coarse_mesh_morphed.vtk -out coarse_mesh_morphed-v2.inp -abaqus
+~/MergePolyData/build/InpFromVTK -in converted_output.vtk -out coarse_mesh_morphed-v2.inp -abaqus
 
 # make elemental centroid lookup table, needs to be stored per person.
 #pvpython lookuptablegenerator_coarse.py
