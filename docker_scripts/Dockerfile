@@ -33,3 +33,4 @@ RUN chown -R ${UNAMEX} /home/${UNAMEX}
 
 RUN cd /home/${UNAMEX}
 RUN pwd
+

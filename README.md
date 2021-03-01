@@ -23,18 +23,6 @@ sudo docker ps -a OR sudo docker image ls
 
 ### Run the docker image:
 
-#### List all docker images :
-
-sudo docker ps
-
-#### Then find the docker name of your image you build
-
-sudo docker run -it -p 80:3000 imagename
-
-#### You will get Docker Shell
-
-```
-# Run the following commands :
 
 $ cd /home/ubuntu/rbf-brain-nodejs-service
 
@@ -47,12 +35,6 @@ $ vim config/configuration_keys.json
 $ forever start server.js
 
 # VERY IMPORTANT AFTER EXECUTING THE ABOVE COMMANDS
-# DON'T EXIT TERMINAL BY TYPING `exit` in TERMINAL INSTEAD
-# CLOSE THE TERMINAL FROM TOP RIGHT CORNER `CLOSE BUTTON`
-
-```
-
-#### THE ENDPOINT OF YOUR NODEJS SERVICE OF COMPUTE INSTANCE IS :
 
 ### http:ec-2-DNS-ENDPOINT/api/
 

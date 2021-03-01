@@ -37,6 +37,6 @@ systemctl enable docker
 # clone master branch
 git clone https://github.com/PSUCompBio/aws-config.git
 cd aws-config/docker_scripts
-docker build -t nsfcareer .
+docker build -t nsfcareer . 
 cd /home/$UNAMEX
 sudo chown -R ubuntu *
