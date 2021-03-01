@@ -3,7 +3,6 @@
 #INSTANCE_TYPE="ubuntu"
 INSTANCE_TYPE="ami"
 #
-
 echo "SCRIPT START TIME"
 date
 
