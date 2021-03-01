@@ -6,8 +6,6 @@ Basically, after creating an instance we install docker on the instance and then
 
 The dockerfile calls the docker_scripts/config_bash.sh script that has all the steps to make our environment.
 
-## To create docker image
-
 Login into AWS and make a Ubuntu instance
 
 - Step 1 Choose an Instance: Ubuntu Server 18.04 LTS, 64 bit, General Purpose
