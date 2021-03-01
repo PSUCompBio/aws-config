@@ -44,7 +44,7 @@ cd /home/$UNAMEX
 
 
 # clone specific branch
-git clone -b ami-setup https://github.com/PSUCompBio/aws-config.git
+git clone https://github.com/PSUCompBio/aws-config.git
 # clone master branch
 #git clone https://github.com/PSUCompBio/aws-config.git
 cd aws-config/docker_scripts_$INSTANCE_TYPE
